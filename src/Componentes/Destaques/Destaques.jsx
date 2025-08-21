@@ -12,8 +12,8 @@ function carrosel_inicial() {
                 </div>
                 <section className="elementos-dest">
                     <ul>
-                        <li><Elemento text="o" /></li>
-                        <li><Elemento text="i" /></li>
+                        <li><Elemento text="o"/></li>
+                        <li><Elemento text="i"/></li>
                         <li><Elemento text="t"/></li>
                         <li><Elemento text="n"/></li>
                         <li><Elemento text="s"/></li>
