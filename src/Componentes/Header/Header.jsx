@@ -1,7 +1,6 @@
 import { useState } from "react"
 import './header.css'
 
-
 function menu() {
     return (
         <>
@@ -14,14 +13,16 @@ function menu() {
                     </div>
 
                     <a href="" id="Entrar">Entrar</a>
+                    <h2>|</h2>
+                    <a href="" ><img src="/cabide.png" alt="cabide" id="cabide"/></a>
                 </div>
                 <div className="part2">
                     <ul className="part2_marcas">
-                        <li><img src="/Logo_Umbro.png" alt="" /></li>
-                        <li><img src="/nike_logo.png" alt="" /></li>
-                        <li><img src="/Adidas_logo.png" alt="" /></li>
-                        <li><img src="/lacoste-logo.png" alt="" /></li>
-                        <li><img src="/puma-logo.png" alt="" /></li>
+                        <li><a href=""><img src="/Logo_Umbro.png" alt="Umbro" /></a></li>
+                        <li><a href=""><img src="/nike_logo.png" alt="Nike" /></a></li>
+                        <li><a href=""><img src="/Adidas_logo.png" alt="Adidas" /></a></li>
+                        <li><a href=""><img src="/lacoste-logo.png" alt="Lacoste" /></a></li>
+                        <li><a href=""><img src="/puma-logo.png" alt="Puma" /></a></li>
                     </ul>
                 </div>
             </header>

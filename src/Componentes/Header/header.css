@@ -1,13 +1,14 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Koulen&family=Krona+One&display=swap');
 header {
+    overflow: hidden;
+
     .part1 {
         background-color: #322388;
         margin: 0;
         width: 100%;
         padding: 10px;
         display: grid;
-        grid-template-columns: 10fr 10fr 10fr;
+        grid-template-columns: 13fr 10fr 10fr 5px 1fr;
         grid-template-rows: 10fr;
 
         #logo {
@@ -29,17 +30,35 @@ header {
         #Entrar {
             color: white;
             text-decoration: none;
-            font-family: "Inter";
+            font-family: "Inter", sans-serif;
             text-align: end;
             align-self: center;
+            margin-right: 10px;
+        }
+        
+        h2{
+            color: white;
+            margin-top: 8px;
+        }
+
+        a{
+            text-align: end;
+            align-self: center;
+            margin-left: 10px;
+            margin-right: 10px;
+
+            #cabide{
+            width: auto;
+            height: 20px;
             margin-right: 20px;
+            }
         }
     }
 
     .part2 {
         background-color: #d2d2d2;
         margin: 0;
-        padding: 10px;
+        padding: 15px;
         width: 100%;
         height: 40px;
 
@@ -47,7 +66,7 @@ header {
             display: flex;
             list-style: none;
             justify-content: space-between;
-            margin: 0px 200px 0px 200px;
+            margin: 0px 230px 0px 230px;
             
             img {
                 width: auto;
