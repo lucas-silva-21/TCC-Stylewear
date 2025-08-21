@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Koulen&family=Krona+One&display=swap');
+
+.elemento {
+    width: 150px;
+    height: 150px;
+    background-color: rgb(240, 240, 240);
+
+    .part1 {
+        width: auto;
+        height: 100px;
+    }
+    .part2 {
+        background-color: #d2d2d2;
+
+        #text{
+            font-family: "Koulen", sans-serif;
+        }
+    }
+}

@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Koulen&family=Krona+One&display=swap');
+
+.fundo_princ {
+    background-color: #322388;
+    padding: 0px 0px 15px 0px;
+
+    .fundo_crrsl {
+        background-color: #322388;
+        margin-top: 50px;
+        padding: 10px;
+        display: flex;
+
+        #titulo-destaque {
+            color: #fff;
+            font-family: "Inter", sans-serif;
+            font-weight: 400;
+        }
+
+        #linha {
+            background-color: white;
+            height: 3px;
+            width: 88.6%;
+            margin-left: 10px;
+            align-self: center;
+            overflow: hidden;
+        }
+    }
+    .elementos-dest{
+        ul{
+            list-style: none;
+            justify-content: space-around;
+            display: flex;
+        }
+    }
+}
