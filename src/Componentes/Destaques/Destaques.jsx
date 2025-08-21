@@ -12,12 +12,11 @@ function carrosel_inicial() {
                 </div>
                 <section className="elementos-dest">
                     <ul>
-                        <li><Elemento text="o"/></li>
-                        <li><Elemento text="i"/></li>
-                        <li><Elemento text="t"/></li>
-                        <li><Elemento text="n"/></li>
-                        <li><Elemento text="s"/></li>
-                        <li><Elemento text="c"/></li>
+                        <li><Elemento text="o" img="./outfit-streetwear.png"/></li>
+                        <li><Elemento text="i" img="./outfit-sportlife.png"/></li>
+                        <li><Elemento text="t" img="./outfit-sportwear.png"/></li>
+                        <li><Elemento text="n" img="./outfit-y2k.png"/></li>
+                        <li><Elemento text="s" img="./outfit-oldmoney.png"/></li>
                     </ul>
                 </section>
             </div>

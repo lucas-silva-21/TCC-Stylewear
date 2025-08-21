@@ -1,10 +1,10 @@
-import  {useState} from "react"
+import { useState } from "react"
 import './Footer.css'
 
 
 function footer() {
     return (
-        
+        <>
             <footer>
                 <div class="container1">
                     <h1 class="titulo">Nos acompanhe:</h1>
@@ -29,21 +29,21 @@ function footer() {
                         </div>
                         <div class="text">
                             <h1 class="titulo2">Informações de contato</h1><br />
-                            <a>Endereço: Rua - Rio Caio Castro, 278  Osasco | São Paulo</a><br />                            
+                            <a>Endereço: Rua - Rio Caio Castro, 278  Osasco | São Paulo</a><br />
                             <a>Telefone: (11) 4002-8922</a><br />
                             <a>Email: stylewear@gmail.com</a>
                         </div>
                         <div class="text">
                             <h1 class="titulo2">Atendimento</h1><br />
                             <a>Atendimento ao cliente<br />
-                            Quem nós somos<br />
-                            Termos de venda<br />
-                            Segurança</a>
+                                Quem nós somos<br />
+                                Termos de venda<br />
+                                Segurança</a>
                         </div>
                     </div>
                 </div>
             </footer>
-        
+        </>
     )
 };
 

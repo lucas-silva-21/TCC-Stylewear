@@ -6,7 +6,7 @@ function elemento_dest(props) {
         <>
             <section className="elemento">
                 <div className="part1">
-                    <a href=""><img src={props.img} alt="Foto1_destaque"></img></a>
+                    <a href=""><img src={props.img} id="foto-dest" alt="Foto1_destaque"></img></a>
                 </div>
                 <div className="part2">
                     <h2 id="text">{props.text}</h2>

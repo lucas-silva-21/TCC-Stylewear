@@ -6,7 +6,7 @@
 
     .fundo_crrsl {
         background-color: #322388;
-        margin-top: 50px;
+        /* margin-top: 42px; */
         padding: 10px;
         display: flex;
 
@@ -28,7 +28,7 @@
     .elementos-dest{
         ul{
             list-style: none;
-            justify-content: space-around;
+            justify-content: space-evenly;
             display: flex;
         }
     }
