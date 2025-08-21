@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Krona+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gugi&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Krona+One&display=swap');
+
+.container1{
+    background-color: #D2D2D2;
+    padding: 100x;
+    .titulo{
+
+        font-family: 40px ;
+        text-align: center;
+        font-family: "Krona One", sans-serif;
+    }
+}
+.container2{
+    background-color: #DADADA;
+    .final-text{
+        display: flex;
+        justify-content: center;
+        text-align: justify;
+        .titulo-stylewear{
+            font-family: "Gugi", sans-serif;
+        }
+        .titulo2{
+                font-size: 25px ;
+        }
+        .text{
+            margin-top: 20px;
+            margin-bottom:20px ;
+            margin-left: 100px;
+            margin-right: 100px;
+        }
+        .final{
+            display: flex;
+            align-items: flex-end;
+            
+        }
+    }
+}
