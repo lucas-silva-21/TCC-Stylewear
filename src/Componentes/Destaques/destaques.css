@@ -6,26 +6,25 @@
 
     .fundo_crrsl {
         background-color: #322388;
-        /* margin-top: 42px; */
         padding: 10px;
-        display: flex;
 
         #titulo-destaque {
             color: #fff;
-            font-family: "Inter", sans-serif;
+            font-family: "Krona One", sans-serif;
             font-weight: 400;
+            justify-self: center;
         }
 
         #linha {
             background-color: white;
             height: 3px;
-            width: 88.6%;
-            margin-left: 10px;
+            width: 100%;
             align-self: center;
             overflow: hidden;
         }
     }
     .elementos-dest{
+        margin-top: 10px;
         ul{
             list-style: none;
             justify-content: space-evenly;

@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Koulen&family=Krona+One&display=swap');
+
+.fundo_dest {
+    background-color: #d9d9d9;
+    margin: 20px 0px 20px 0px;
+    padding: 20px;
+    overflow: hidden;
+
+    ul {
+        list-style: none;
+        justify-content: space-evenly;
+        display: flex;
+    }
+}

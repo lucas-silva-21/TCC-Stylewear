@@ -18,11 +18,11 @@ function menu() {
                 </div>
                 <div className="part2">
                     <ul className="part2_marcas">
-                        <li><a href=""><img src="/Logo_Umbro.png" alt="Umbro" /></a></li>
-                        <li><a href=""><img src="/nike_logo.png" alt="Nike" /></a></li>
-                        <li><a href=""><img src="/Adidas_logo.png" alt="Adidas" /></a></li>
-                        <li><a href=""><img src="/lacoste-logo.png" alt="Lacoste" /></a></li>
-                        <li><a href=""><img src="/puma-logo.png" alt="Puma" /></a></li>
+                        <li><a href=""><img src="/Logos/Logo_Umbro.png" alt="Umbro" /></a></li>
+                        <li><a href=""><img src="/Logos/nike_logo.png" alt="Nike" /></a></li>
+                        <li><a href=""><img src="/Logos/Adidas_logo.png" alt="Adidas" /></a></li>
+                        <li><a href=""><img src="/Logos/lacoste-logo.png" alt="Lacoste" /></a></li>
+                        <li><a href=""><img src="/Logos/puma-logo.png" alt="Puma" /></a></li>
                     </ul>
                 </div>
             </header>
