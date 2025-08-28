@@ -7,12 +7,12 @@ function categoria_inicial() {
         <>
             <div className="fundo_dest">
                     <ul>
-                        <li><Bolha text="Blusas" img="./Destaque/Blusa_destaq.png" alt="Imagem de Blusa"/></li>
-                        <li><Bolha text="Calças" img="./Destaque/Calça_destaq.png" alt="Imagem de Calça"/></li>
-                        <li><Bolha text="Shorts" img="./Destaque/Blusa_destaq.png" alt="Imagem de Short"/></li>
-                        <li><Bolha text="Camisetas" img="./Destaque/Camiseta_destaq.png" alt="Imagem de Camiseta"/></li>
-                        <li><Bolha text="Tênis" img="./Destaque/Tenis_destaq.png" alt="Imagem de Tênis"/></li>
-                        <li><Bolha text="Bonés" img="./Destaque/Bone_destaq.png" alt="Imagem de Boné" id="bone"/></li>
+                        <li><Bolha text="Blusas" img="./Categoria/Blusa_destaq.png" alt="Imagem de Blusa"/></li>
+                        <li><Bolha text="Calças" img="./Categoria/Calça_destaq.png" alt="Imagem de Calça"/></li>
+                        <li><Bolha text="Shorts" img="./Categoria/Blusa_destaq.png" alt="Imagem de Short"/></li>
+                        <li><Bolha text="Camisetas" img="./Categoria/Camiseta_destaq.png" alt="Imagem de Camiseta"/></li>
+                        <li><Bolha text="Tênis" img="./Categoria/Tenis_destaq.png" alt="Imagem de Tênis"/></li>
+                        <li><Bolha text="Bonés" img="./Categoria/Bone_destaq.png" alt="Imagem de Boné" id="bone"/></li>
                     </ul>
             </div>
         </>
