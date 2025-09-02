@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Koulen&family=Krona+One&display=swap');
+
+.container {
+    
+    background-color: hsl(0, 0%, 72%);
+    justify-self: center;
+    align-self: center;
+    align-items: center;
+    padding: 5px;
+    border-radius: 7px;
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    margin-bottom: 3%;
+    margin-top: 3%;
+    padding-top: 3%;
+
+    div {
+        padding: 10px;
+
+        .text {
+            font-family: 'Krona One', sans-serif;
+            font-weight: 600;
+            justify-self: center;
+        }
+    }
+
+    .mb-1 {
+        display: flex;
+        flex-direction: column;
+
+        .form-label {
+            font-family: 'Koulen', sans-serif;
+            font-weight: 400;
+            width: 70%;
+            margin-left: 13%;
+        }
+
+        .form {
+            width: 70%;
+            margin-left: 13%;
+            padding: 6px;
+            border-radius: 7px;
+            border:  none;
+            outline: 0;
+        }
+    }
+
+    .mb-2{
+        display: flex;
+        flex-direction: column;
+        height: 55px;
+        overflow: hidden;
+
+        .form-label {
+            font-family: 'Koulen', sans-serif;
+            font-weight: 400;
+            width: 70%;
+            margin-left: 13%;
+        }
+
+        .form {
+            width: 70%;
+            margin-left: 13%;
+            padding: 6px;
+            border-radius: 7px;
+            border:  none;
+            outline: 0;
+        }
+
+        .form-text {
+            width: 70%;
+            margin-left: 13%;
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            color: rgb(160, 9, 9);
+        }
+    } .mb-2:hover{
+        transition: 10s;
+        height: auto;
+    }
+
+    .col-auto {
+        justify-self: center;
+
+        .btn-cadast {
+            width: 150px;
+            background-color: #322388;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            font-family: 'Koulen', sans-serif;
+        }.btn-cadast:hover{
+            transition: 1s;
+            background-color: #322388dc;
+        }
+    }
+
+}

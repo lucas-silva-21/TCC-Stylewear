@@ -1,4 +1,5 @@
 import { useState } from "react"
+
 import './header.css'
 
 function menu() {
@@ -12,10 +13,13 @@ function menu() {
                         <input placeholder="Pesquisar" class="Busca"></input>
                     </div>
 
-                    <a href="" id="Entrar">Entrar</a>
+                    <a href="/cadastro" id="H-text">Entrar</a>
                     <h2>|</h2>
-                    <a href="" ><img src="/cabide.png" alt="cabide" id="cabide"/></a>
+                    <a href="/cadastro" id="H-text">Cadastro</a>
+                    <h2>|</h2>
+                    <a href=""><img src="/cabide.png" alt="cabide" id="cabide"/></a>
                 </div>
+                
                 <div className="part2">
                     <ul className="part2_marcas">
                         <li><a href=""><img src="/Logos/Logo_Umbro.png" alt="Umbro" /></a></li>
