@@ -5,6 +5,7 @@ import Capa from './Componentes/Capa/Capa';
 import Categoria from './Componentes/Categoria/Categoria';
 import Footer from './Componentes/Footer/Footer';
 import Cadastro from './Componentes/Cadastro_Login/Cadastro/Cadastro';
+import Login from './Componentes/Cadastro_Login/Login/Login'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';  
 
 function App() {
@@ -29,6 +30,14 @@ function App() {
           element={
             <>
               <Cadastro />
+            </>
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <>
+              <Login />
             </>
           }
         />
