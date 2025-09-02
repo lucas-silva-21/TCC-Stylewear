@@ -1,15 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Krona+One&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Gugi&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Krona+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gugi&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Koulen&family=Krona+One&display=swap');
 
 .container1{
     background-color: #D2D2D2;
     padding: 100x;
     .titulo{
-
-        font-family: 40px ;
+        font-size: 20px ;
         text-align: center;
         font-family: "Krona One", sans-serif;
     }
+    .container-icones{
+        padding: 8px;
+    }
+    .icones{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .icon{
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    
 }
 .container2{
     background-color: #DADADA;
@@ -19,15 +32,18 @@
         text-align: justify;
         .titulo-stylewear{
             font-family: "Gugi", sans-serif;
+            font-size: 15px;
         }
         .titulo2{
-                font-size: 25px ;
+                font-size: 17px ;
         }
         .text{
             margin-top: 20px;
             margin-bottom:20px ;
             margin-left: 100px;
             margin-right: 100px;
+            font-size: 7px;
+            font-family: "Krona One", sans-serif;
         }
         .final{
             display: flex;

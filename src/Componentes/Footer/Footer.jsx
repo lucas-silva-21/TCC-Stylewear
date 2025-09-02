@@ -2,7 +2,6 @@ import  {useState} from "react"
 import "bootstrap-icons/font/bootstrap-icons";
 import './Footer.css'
 
-
 function footer() {
     return (
         
@@ -11,11 +10,11 @@ function footer() {
                     <h1 class="titulo">Nos acompanhe:</h1>
                     <div class="container-icones">
                         <ul class="icones">
-                            <i class="bi bi-instagram"></i>
-                            <i class="bi bi-tiktok"></i>
-                            <i class="bi bi-pinterest"></i>
-                            <i class="bi bi-twitter-x"></i>
-                            <i class="bi bi-facebook"></i>
+                            <img src="./public/instagram.svg" alt="instagram" id="icon"/>
+                            <img src="./public/tiktok.svg" alt="tiktok" id="icon"/>
+                            <img src="./public/pinterest.svg" alt="pinterest" id="icon"/>
+                            <img src="./public/twitter-x.svg" alt="x" id="icon"/> 
+                            <img src="./public/facebook.svg" alt="facebook" id="icon"/>  
                         </ul>
                     </div>
                 </div>
@@ -29,17 +28,23 @@ function footer() {
                             <a class="final"> ©Stylewear </a>
                         </div>
                         <div class="text">
-                            <h1 class="titulo2">Informações de contato</h1><br />
-                            <a>Endereço: Rua - Rio Caio Castro, 278  Osasco | São Paulo</a><br />                            
-                            <a>Telefone: (11) 4002-8922</a><br />
-                            <a>Email: stylewear@gmail.com</a>
+                            <h1 class="titulo2">Informações de contato:</h1><br />
+                            <a>Endereço: <br />
+                            <a>Rua - Rio Caio Hebling, 278 </a><br />
+                            <a>Osasco | São Paulo</a></a><br />
+                            <a></a>                            
+                            <a>Telefone: <br />
+                            <a>(11) 4002-8922</a></a><br />
+                            <a></a>
+                            <a>Email: <br />
+                            <a>stylewear@gmail.com</a></a>
                         </div>
                         <div class="text">
-                            <h1 class="titulo2">Atendimento</h1><br />
+                            <h1 class="titulo2">Atendimento:</h1><br />
                             <a>Atendimento ao cliente<br />
-                            Quem nós somos<br />
-                            Termos de venda<br />
-                            Segurança</a>
+                            <a>Quem nós somos</a><br />
+                            <a>Termos de venda</a><br />
+                            <a>Segurança</a></a>
                         </div>
                     </div>
                 </div>

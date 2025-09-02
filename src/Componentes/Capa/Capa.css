@@ -9,11 +9,15 @@
         font-family: "Krona One", sans-serif;
         font-size: 20px ;
     }
+    .text-principal{
+        padding-left:20px ;
+    }
     .container-capa{
         justify-content: end;
     }
     #Capa{
         height: 250px;
         width: auto;
+        align-items: end;
         }
 }

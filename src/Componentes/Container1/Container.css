@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Krona+One&display=swap');
+
+.container-principal1{
+    margin-top: 40px;
+    margin-left: 0px;
+    margin-bottom: 40px;
+    margin-right: 0px;
+    background: linear-gradient(90deg,rgba(3, 5, 5, 1) 32%, rgba(22, 0, 111, 1) 100%);
+    display: flex;
+    text-align: end;
+    align-items: center;
+    .texto-principal{
+        font-family: "Krona One", sans-serif;
+        font-size: 20px;
+        color: white;
+        justify-self: end;
+        align-items: end;
+    }
+}
+
+#boneco{
+    width: 350px;
+    height: 350px;
+}
