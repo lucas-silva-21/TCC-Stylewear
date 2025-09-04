@@ -1,9 +1,11 @@
 import { useState } from 'react';
-import Header from './Componentes/Header/Header';
-import Destaques from './Componentes/Destaques/Destaques';
-import Capa from './Componentes/Capa/Capa';
-import Categoria from './Componentes/Categoria/Categoria';
-import Footer from './Componentes/Footer/Footer';
+import Header from './Componentes/Inicio/Header/Header';
+import Destaques from './Componentes/Inicio/Destaques/Destaques';
+import Capa from './Componentes/Inicio/Capa/Capa';
+import Categoria from './Componentes/Inicio/Categoria/Categoria';
+import Container1 from './Componentes/Inicio/Container1/Container';
+import Carrosel from './Componentes/Inicio/Carrosel/carrosel'
+import Footer from './Componentes/Inicio/Footer/Footer';
 import Cadastro from './Componentes/Cadastro_Login/Cadastro/Cadastro';
 import Login from './Componentes/Cadastro_Login/Login/Login'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';  
@@ -21,6 +23,8 @@ function App() {
               <Capa />
               <Destaques />
               <Categoria />
+              <Container1/>
+              <Carrosel/>
               <Footer />
             </>
           }

@@ -3,8 +3,8 @@ import "./cadastro.css"
 function cadastro() {
     return (
         <>
-            <div class="container">
-                <div>
+            <div class="container_cadast">
+                <div className="Titulo">
                     <h1 class="text">Cadastre-se</h1>
                 </div>
 
@@ -31,8 +31,14 @@ function cadastro() {
                     <input type="password" id="inputPassword5" class="form" aria-describedby="passwordHelpBlock" placeholder="Corfirme a senha ..."></input>
                 </div>
 
+                <div className="sla">
+                    <a href="/login" id="C-text">Entrar</a>
+                    <h2>|</h2>
+                    <a href="/cadastro" id="C-text">Cadastro</a>
+                </div>
+
                 <div class="col-auto">
-                    <button type="submit" class="btn-cadast">Cadastrar-se</button>
+                    <a href="/"><button type="submit" class="btn-cadast">Cadastrar-se</button></a>
                 </div>
 
             </div>

@@ -1,0 +1,27 @@
+.carousel-container {
+  width: 100%;
+  margin: 0px 0px 50px 0px;
+  overflow: hidden;
+  position: relative;
+  
+}
+
+.carousel-track {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 100%;
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+.carousel-image {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+  display: block;
+}

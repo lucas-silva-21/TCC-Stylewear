@@ -3,8 +3,8 @@ import "./login.css"
 function login() {
     return (
         <>
-            <div class="container">
-                <div>
+            <div class="container_login">
+                <div class="Titulo">
                     <h1 class="text">Entrar</h1>
                 </div>
 
@@ -16,13 +16,16 @@ function login() {
                 <div class="mb-2">
                     <label for="inputPassword5" class="form-label">Senha:</label>
                     <input type="password" id="inputPassword5" class="form" aria-describedby="passwordHelpBlock" placeholder="Senha ..."></input>
-                    <div id="passwordHelpBlock" class="form-text">
-                        Sua senha deve ter de 8 a 20 caracteres, conter letras e números e não deve conter espaços, caracteres especiais ou emoji.
-                    </div>
+                </div>
+
+                <div className="sla">
+                    <a href="/login" id="C-text">Entrar</a>
+                    <h2>|</h2>
+                    <a href="/cadastro" id="C-text">Cadastro</a>
                 </div>
 
                 <div class="col-auto">
-                    <button type="submit" class="btn-cadast">Cadastrar-se</button>
+                    <a href="/"><button type="submit" class="btn-entrar">Entrar</button></a>
                 </div>
 
             </div>

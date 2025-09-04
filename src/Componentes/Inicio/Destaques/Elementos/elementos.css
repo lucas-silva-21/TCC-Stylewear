@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Koulen&family=Krona+One&display=swap');
+
+.elemento {
+    width: 200px;
+    height: 304px;
+    background-color: rgb(240, 240, 240);
+    border-radius: 10px;
+
+    .part1 {
+        width: auto;
+        height: auto;
+        justify-self: center;
+
+        #foto-dest {
+            width: 200px;
+            height: 255px;
+            border-radius: 10px 10px 0px 0px;
+        }
+
+    }
+
+    .part2 {
+        height: 45px;
+        background-color: #d2d2d2;
+        border-radius: 0px 0px 10px 10px;
+
+        #text {
+            margin-left: 5px;
+            font-family: "Koulen", sans-serif;
+            font-size: medium;
+        }
+    }
+
+}.elemento:hover {
+    transition: 0.5s;
+    width: 202px;
+    height: 306px;
+    box-shadow: 10px 10px 3px rgba(0, 0, 0, 0.3);
+    
+
+    .part1{
+        #foto-dest {
+            transition: 0.5s;
+            width: 202px;
+            height: 257px;
+            border-radius: 10px 10px 0px 0px;
+        }
+    }
+
+    .part2{
+        transition: 0.5s;
+        height: 47px;
+        
+    }
+}.elemento:hover{
+    transition: 0.2s;
+    border: 2px solid white;
+
+    .part2{
+        transition: 0.2s;
+        border-bottom: 3px solid white;
+    }
+}
