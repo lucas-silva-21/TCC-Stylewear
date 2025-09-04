@@ -25,6 +25,13 @@ function footer() {
                             <br />
                             <a> CNPJ: 07865390071234</a>
                             <br />
+                            <a></a><br />
+                            <a></a><br />
+                            <a></a><br />
+                            <a></a><br />
+                            <a></a><br />
+                            <a></a><br />
+                            <a></a><br />
                             <a class="final"> ©Stylewear </a>
                         </div>
                         <div class="text">
@@ -32,10 +39,10 @@ function footer() {
                             <a>Endereço: <br />
                             <a>Rua - Rio Caio Hebling, 278 </a><br />
                             <a>Osasco | São Paulo</a></a><br />
-                            <a></a>                            
+                            <a></a><br />                            
                             <a>Telefone: <br />
                             <a>(11) 4002-8922</a></a><br />
-                            <a></a>
+                            <a></a><br />
                             <a>Email: <br />
                             <a>stylewear@gmail.com</a></a>
                         </div>
