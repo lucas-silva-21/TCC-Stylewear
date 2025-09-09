@@ -7,7 +7,7 @@ import Container1 from './Componentes/Inicio/Container1/Container';
 import Carrosel from './Componentes/Inicio/Carrosel/carrosel'
 import Footer from './Componentes/Inicio/Footer/Footer';
 import Cadastro from './Componentes/Cadastro_Login/Cadastro/Cadastro';
-import Login from './Componentes/Cadastro_Login/Login/Login'
+import Login from './Componentes/Cadastro_Login/Login/Login';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';  
 
 function App() {
@@ -19,10 +19,10 @@ function App() {
         <Route  path="/"
           element={
             <>
-              <Header />
-              <Capa />
-              <Destaques />
-              <Categoria />
+              <Header/>
+              <Capa/>
+              <Destaques/>
+              <Categoria/>
               <Container1/>
               <Carrosel/>
               <Footer />
@@ -45,6 +45,14 @@ function App() {
             </>
           }
         />
+        <Route 
+        path='/Umbro'
+        element={
+          <>
+            <Header/>
+            <Footer/>
+          </>
+        }/>
       </Routes>
     </Router>
   );

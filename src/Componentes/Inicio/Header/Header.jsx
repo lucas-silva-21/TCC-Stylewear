@@ -7,7 +7,7 @@ function menu() {
         <>
             <header>
                 <div className="part1">
-                    <img src="/logo2.ico" alt="Stylewear" id="logo" />
+                    <img src="/logo2.png" alt="Stylewear" id="logo" />
 
                     <div>
                         <input placeholder="Pesquisar" class="Busca"></input>
