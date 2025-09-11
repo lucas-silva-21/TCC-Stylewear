@@ -1,0 +1,48 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Koulen&family=Krona+One&display=swap');
+
+.caroseul-seleção{
+    margin: 2%;
+
+    #titulo{
+        font-family: 'Krona One', sans-serif;
+        font-size: larger;
+        margin-left: 20px;
+    }
+    .caroseul{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 20px;
+
+        #left{
+            background-color: #eeee;
+            align-self: center;
+            justify-self: center;
+            height: 36px;
+            width: 36px;
+            border-radius: 50%;
+            font-size: 20px;
+            border: none;
+            float: right;
+        }
+        .ul-itens{
+            display: flex;
+            list-style: none;
+            gap: 5%;
+            width: 90%;
+            overflow: hidden;
+        }
+        #right{
+            background-color: #eeee;
+            align-self: center;
+            justify-self: center;
+            height: 36px;
+            width: 36px;
+            border-radius: 50%;
+            font-size: 20px;
+            border: none;
+            float: right;
+        }
+    }
+}

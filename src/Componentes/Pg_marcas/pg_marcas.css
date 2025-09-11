@@ -1,0 +1,33 @@
+
+.painel{
+    display: grid;
+    grid-template-columns: 10fr 1fr 10fr;
+    grid-template-rows: 1fr;
+    background-color: black;
+    overflow: hidden;
+
+    #painel_marca{
+        justify-content: center;
+        height: 150px;
+        width: auto;
+    }
+
+    #painel_marca1{
+        justify-content: center;
+        opacity: 10px;
+        height: 150px;
+        width: auto;
+        overflow: hidden;
+    }
+}
+.div-logo{
+    justify-self: center;
+    padding: 60px;
+
+    #umbro{
+    height: 50px;
+    width: auto;
+    justify-self: center;
+    align-self: center;
+}
+}
