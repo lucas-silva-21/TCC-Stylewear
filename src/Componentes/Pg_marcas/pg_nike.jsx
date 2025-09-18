@@ -2,6 +2,21 @@ import Seleção from './Crrsl/Elemento';
 import './pg_marcas.css'
 
 function Nike(props){
+
+    const item_imgTenisUmbro = [
+        {item: '', img: './Calça1.png', alt: 'camiseta',},
+        {item: '', img: './Tenis1.png', alt: 'camiseta',},
+        {item: '', img: './Tenis1.png', alt: 'camiseta',},
+        {item: '', img: './Tenis1.png', alt: 'camiseta',},
+        {item: '', img: './Tenis1.png', alt: 'camiseta',},
+        {item: '', img: './Calça1.png', alt: 'camiseta',},
+        {item: '', img: './Tenis1.png', alt: 'camiseta',},
+        {item: '', img: './Tenis1.png', alt: 'camiseta',},
+        {item: '', img: './Tenis1.png', alt: 'camiseta',},
+        {item: '', img: './Tenis1.png', alt: 'camiseta',},
+        {item: '', img: './Calça1.png', alt: 'camiseta',},
+    ];
+
     return(
         <>  
             <section className='painel'>
@@ -10,20 +25,16 @@ function Nike(props){
                 <span></span>
             </section>
             <div>
-                <Seleção titulo="Tenis" alt1="Imagem de um tenis da marca umbro"
-                img="./Tenis1.png"
+                <Seleção titulo="Tênis" list="item_imgTenisUmbro"
                 />
-                <Seleção titulo="Shorts" alt1="Imagem de um short da marca umbro"
-                img="./Short1.png"
+                <Seleção titulo="Shorts" 
                 />
-                <Seleção titulo="Calças" alt1="Imagem de um calças da marca umbro"
-                img="./Calça1.png"
+                <Seleção titulo="Calças"
                 />
-                <Seleção titulo="Camisetas" alt1="Imagem de um camiseta da marca umbro"
-                img="./Camiseta1.png"
+                <Seleção titulo="Camisetas"
                 />
             </div>
-            <div className='div-logo'><img src="./Logos/Logo_Umbro.png" alt="Logo Umbro" id='umbro' /></div>
+            <div className='div-logo'><img src={props.logo} alt="Logo Umbro" id='umbro' /></div>
         </>
     )
 }

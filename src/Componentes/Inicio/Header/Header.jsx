@@ -7,13 +7,13 @@ function menu() {
         <>
             <header>
                 <div className="part1">
-                    <img src="/logo2.png" alt="Stylewear" id="logo" />
+                    <img src="/logo2.png" href="/" alt="Stylewear" id="logo" />
 
                     <div>
                         <input placeholder="Pesquisar" class="Busca"></input>
                     </div>
 
-                    <a href=""><img src="/cabide.png" alt="cabide" id="cabide"/></a>
+                    <a href="/Armario"><img src="/cabide.png" alt="cabide" id="cabide"/></a>
                     <h2>|</h2>
                     <a href="/login" id="H-text">Entrar</a>
                     <h2>|</h2>

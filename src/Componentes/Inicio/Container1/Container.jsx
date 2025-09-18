@@ -5,7 +5,7 @@ function container(){
     return(
         <div href="" class="container-principal1">
             <div class="container-boneco">
-                <img src="./boneco.png" alt="boneco" id="boneco"/>
+                <img src="./Outfit/boneco.png" alt="boneco" id="boneco"/>
             </div>
                 <div class="texto-principal">
                     <h1>Teste seu</h1>

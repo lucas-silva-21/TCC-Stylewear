@@ -11,14 +11,6 @@
         height: 150px;
         width: auto;
     }
-
-    #painel_marca1{
-        justify-content: center;
-        opacity: 10px;
-        height: 150px;
-        width: auto;
-        overflow: hidden;
-    }
 }
 .div-logo{
     justify-self: center;

@@ -1,13 +1,13 @@
 import Seleção from './Crrsl/Elemento';
 import './pg_marcas.css'
 
-function Umbro(props){
+function Adidas(props){
 
     return(
         <>  
             <section className='painel'>
                 <span></span>
-                <img src={props.painel} alt="Painel Umbro" id='painel_marca'/>
+                <img src={props.painel} alt="Painel Adidas" id='painel_marca'/>
                 <span></span>
             </section>
             <div>
@@ -20,9 +20,9 @@ function Umbro(props){
                 <Seleção titulo="Camisetas"
                 />
             </div>
-            <div className='div-logo'><img src={props.logo} alt="Logo Umbro" id='umbro' /></div>
+            <div className='div-logo'><img src={props.logo} alt="Logo Adidas" id='umbro' /></div>
         </>
     )
 }
 
-export default Umbro;
+export default Adidas;
