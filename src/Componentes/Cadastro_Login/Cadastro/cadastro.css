@@ -1,20 +1,20 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Koulen&family=Krona+One&display=swap');
 
 .container_cadast {
-    width: 64%;
-    color: white;
-    background-color: #322388;
+        width: 50%;
+    color: #000000;
+    background-color: #ffffff;
     justify-self: center;
     align-self: center;
     align-items: center;
     border-radius: 7px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    
     padding-top: 2%;
     padding-bottom: 2%;
-    margin-top: 1.5%;
+    margin-top: 8%;
 
     .Titulo {
-        padding: 10px;
+        padding: 20px;
 
         .text {
             font-family: 'Krona One', sans-serif;
@@ -31,18 +31,21 @@
         align-items: center;
 
         .form-label {
-            font-family: 'Koulen', sans-serif;
-            font-weight: 400;
+            font-family: Figma Sans, sans-serif;
+            font-weight: bold;
             align-self: flex-start;
-            margin-left: 14%;
+            margin-left: 24%;
+            
+
         }
 
         .form {
-            width: 70%;
+            width: 50%;
             padding: 6px;
             border-radius: 7px;
             border:  none;
             outline: 0;
+            background-color:rgb(233, 237, 242)
         }
     }
 
@@ -55,22 +58,23 @@
         overflow: hidden;
 
         .form-label {
-            font-family: 'Koulen', sans-serif;
-            font-weight: 400;
+            font-family: Figma Sans, sans-serif;
+            font-weight: bold;
             align-self: flex-start;
-            margin-left: 14%;
+            margin-left: 24%;
         }
 
         .form {
-            width: 70%;
+            width: 50%;
             padding: 6px;
             border-radius: 7px;
             border:  none;
             outline: 0;
+            background-color:rgb(233, 237, 242)
         }
 
         .form-text {
-            width: 70%;
+            width: 50%;
             padding: 10px;
             border-radius: 10px;
             border: none;
@@ -91,7 +95,8 @@
             align-self: center;
             font-family: 'Koulen',sans-serif;
             padding: 0px 10px 0px 10px;
-            color: white;
+            color: rgb(56, 42, 255);
+            text-decoration: none;
         }
     }
     .col-auto {
@@ -109,7 +114,7 @@
 
         }.btn-cadast:hover{
             transition: 1s;
-            background-color: #236b88d0;
+            background-color: #006992d0;
 
         }
     }

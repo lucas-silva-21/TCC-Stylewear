@@ -10,6 +10,7 @@ import Footer from './Componentes/Inicio/Footer/Footer';
 
 import Cadastro from './Componentes/Cadastro_Login/Cadastro/Cadastro';
 import Login from './Componentes/Cadastro_Login/Login/Login';
+import RecuperarSenha from './Componentes/Cadastro_Login/recuperar/recuperar';
 
 import Conteudo from './Componentes/Pg_marcas/pg_umbro';
 
@@ -50,6 +51,14 @@ function App() {
             </>
           }
         />
+        <Route
+          path="/Recuperar"
+          element={
+            <>
+              <RecuperarSenha />
+            </>
+          }
+        />
         <Route 
         path='/Umbro'
         element={
@@ -64,11 +73,13 @@ function App() {
           element={
             <>
               <Header/>
-              <Conteudo painel='./Painel.Nike.png' />
+              <Conteudo painel='./Logos/banner-nike.png' />
               <Footer/>
             </>
           }/>
         </Routes>
+
+        
     </Router>
   );
 }

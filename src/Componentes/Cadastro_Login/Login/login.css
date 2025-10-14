@@ -1,23 +1,26 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Koulen&family=Krona+One&display=swap');
 
+body{
+    background-color: #d7d7d7;
+}
 .container_login {
-    width: 64%;
-    color: white;
-    background-color: #322388;
+    width: 50%;
+    color: #000000;
+    background-color: #ffffff;
     justify-self: center;
     align-self: center;
     align-items: center;
     border-radius: 7px;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.3);
+    
     padding-top: 2%;
     padding-bottom: 2%;
     margin-top: 8%;
 
     .Titulo {
-        padding: 10px;
+        padding: 20px;
 
         .text {
-            font-family: 'Krona One', sans-serif;
+            font-family: 'Koulen',sans-serif;
             font-weight: 600;
             justify-self: center;
         }
@@ -30,18 +33,21 @@
         align-items: center;
 
         .form-label {
-            font-family: 'Koulen', sans-serif;
-            font-weight: 400;
+            font-family: Figma Sans, sans-serif;
+            font-weight: bold;
             align-self: flex-start;
-            margin-left: 14%;
+            margin-left: 24%;
+            
         }
 
         .form {
-            width: 70%;
+            width: 50%;
             padding: 6px;
             border-radius: 7px;
             border: none;
             outline: 0;
+            background-color:rgb(233, 237, 242)
+
         }
     }
 
@@ -52,18 +58,19 @@
         align-items: center;
 
         .form-label {
-            font-family: 'Koulen', sans-serif;
-            font-weight: 400;
+            font-family: Figma Sans, sans-serif;
+            font-weight: bold;
             align-self: flex-start;
-            margin-left: 14%;
+            margin-left: 24%;
         }
 
         .form {
-            width: 70%;
+            width: 50%;
             padding: 6px;
             border-radius: 7px;
             border: none;
             outline: 0;
+            background-color:rgb(233, 237, 242)
         }
 
         .form-text {
@@ -82,9 +89,12 @@
 
         #C-text {
             align-self: center;
-            font-family: 'Koulen', sans-serif;
+            font-family: Figma Sans, sans-serif;
             padding: 0px 10px 0px 10px;
-            color: white;
+            color: rgb(56, 42, 255);
+            text-decoration: none;
+            margin-bottom: 2%;
+            font-weight: bold;
         }
     }
 
@@ -99,14 +109,37 @@
             padding: 10px;
             border: none;
             border-radius: 10px;
-            font-family: 'Koulen', sans-serif;
+            font-family: 'Koulen',sans-serif;
+            
 
         }
 
         .btn-entrar:hover {
             transition: 1s;
-            background-color: #236b88d0;
+            background-color: #006992d0;
         }
     }
+
+    .esqueci {
+        display: flex;
+        margin-left:15%;
+
+        #C-text {
+            color: rgb(12, 0, 181);
+            text-decoration: none;
+            margin-left: 12%;
+            margin-bottom: 5%;
+            margin-top: 1%;
+            font-weight: 500;
+            
+        }
+
+        #C-text:hover {
+            color: #8f2614d0;
+            transition: 0.5s;
+        }
+    }
+
+
 
 }
