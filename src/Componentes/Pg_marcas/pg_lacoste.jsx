@@ -1,7 +1,7 @@
 import Carousel_Umbro from './Crrsl/Crrsl';
 import './pg_marcas.css'
 
-function Adidas(props){
+function Lacoste(props){
 
     return(
         <>  
@@ -21,4 +21,4 @@ function Adidas(props){
     )
 }
 
-export default Adidas;
+export default Lacoste;

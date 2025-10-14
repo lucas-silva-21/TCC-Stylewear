@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Koulen&family=Krona+One&display=swap');
+
+/* .caroseul-armario {
+    margin: 2%;
+*/
+    .caroseul {
+        display: flex;
+        scroll-behavior: smooth;
+        padding: 20px 0;
+        justify-content: center;
+        overflow: hidden;
+        width: 100%;
+
+        .armario {
+            display: flex;
+            flex-direction: row;
+            width: 220px;
+            gap: 20px;;
+            overflow: hidden;
+        } 
+
+        .div-card_armario {
+            background-color: rgb(235 235 235);
+            padding: 2px;
+            border-radius: 7px;
+            object-fit: cover;
+
+            #img-item {
+                height: 200px;
+                width: auto;
+                border-radius: 5px;
+                object-fit: cover;
+            }
+        }
+
+        #left2 {
+            background-color: #eeee;
+            align-self: center;
+            height: 36px;
+            width: 36px;
+            margin-right: 70px;
+            border-radius: 50%;
+            font-size: 20px;
+            border: none;
+        }
+
+        #left2:active {
+            background-color: #cdcdcdee;
+        }
+
+        #left2:hover {
+            transition: 1s;
+            cursor: pointer;
+            background-color: #cdcdcdee;    
+        }
+
+        .div-itens {
+            width: 80%;
+            overflow: hidden;
+        }
+
+        .ul-itens {
+            display: flex;
+            list-style: none;
+            gap: 5%;
+            width: 75%;
+            overflow: hidden;
+        }
+
+        #right2 {
+            background-color: #eeee;
+            align-self: center;
+            height: 36px;
+            width: 36px;
+            margin-left: 70px;
+            border-radius: 50%;
+            font-size: 20px;
+            border: none;
+        }
+
+        #right2:active {
+            background-color: #cdcdcdee;
+        }
+
+        #right2:hover {
+            transition: 1s;
+            cursor: pointer;
+            background-color: #cdcdcdee;
+        }
+     }
+/* }  */

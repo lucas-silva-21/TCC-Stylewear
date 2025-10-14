@@ -43,17 +43,21 @@ header {
         }
 
         a{
-            text-align: end;
             align-self: center;
             margin-left: 10px;
             margin-right: 10px;
+        }
 
-            #cabide{
-            width: auto;
-            height: 20px;
-            margin-right: 20px;
+        #cabide{
+            text-align: end; 
+
+            #cabide-img{
+                width: auto;
+                height: 20px;
+                margin-right: 2%;
             }
         }
+
     }
 
     .part2 {

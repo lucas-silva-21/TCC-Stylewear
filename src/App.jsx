@@ -11,9 +11,15 @@ import Footer from './Componentes/Inicio/Footer/Footer';
 import Cadastro from './Componentes/Cadastro_Login/Cadastro/Cadastro';
 import Login from './Componentes/Cadastro_Login/Login/Login';
 
-import Conteudo from './Componentes/Pg_marcas/pg_umbro';
+import Adidas from './Componentes/Pg_marcas/pg_adidas';
+import Nike from './Componentes/Pg_marcas/pg_nike';
+import Lacoste from './Componentes/Pg_marcas/pg_lacoste';
+import Umbro from './Componentes/Pg_marcas/pg_umbro';
+import Puma from './Componentes/Pg_marcas/pg_puma';
 
 import Armario from './Componentes/Armario/Armario';
+
+import Camisetas from './Componentes/Pg_categoria/pg_camisetas';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'; 
 
@@ -57,7 +63,7 @@ function App() {
         element={
           <>
             <Header/>
-            <Conteudo painel='./Painel.Umbro.png' logo='./Logos/Logo_Umbro.png'/>
+            <Umbro painel='./Painel.Umbro.png' altpainel='Painel da marca Umbro' logo='./Logos/Logo_Umbro.png' altlog='Logo da Umbro'/>
             <Footer/>
           </>
         }/>
@@ -66,7 +72,7 @@ function App() {
           element={
             <>
               <Header/>
-              <Conteudo painel='./Painel.Nike.png' logo='./Logos/nike_logo.png'/>
+              <Nike painel='./Painel.Nike.png' altpainel='Painel da marca Umbro' logo='./Logos/nike_logo.png' altlog='Logo da Nike'/>
               <Footer/>
             </>
           }/>
@@ -75,16 +81,25 @@ function App() {
           element={
             <>
               <Header/>
-              <Conteudo painel='./Painel.Adidas.png' logo='./Logos/Adidas_logo.png'/>
+              <Adidas painel='./Painel.Adidas.png' altpainel='Painel da marca Adidas' logo='./Logos/Adidas_logo.png' altlog='Logo da Adidas'/>
               <Footer/>
             </>
           }/>
           <Route 
-          path='/Lagoste'
+          path='/Lacoste'
           element={
             <>
               <Header/>
-              <Conteudo painel='./Painel.Lacoste.png' logo='./Logos/lacoste_logo.png'/>
+              <Lacoste painel='./Painel.Lacoste.png' altpainel='Painel da marca Lacoste' logo='./Logos/lacoste-logo.png' altlog='Logo da Lacoste'/>
+              <Footer/>
+            </>
+          }/>
+          <Route 
+          path='/Puma'
+          element={
+            <>
+              <Header/>
+              <Puma painel='./Painel.Puma.png' altpainel='Painel da marca Puma' logo='./Logos/puma-logo.png' altlog='Logo da Puma'/>
               <Footer/>
             </>
           }/>
@@ -94,6 +109,22 @@ function App() {
             <>
               <Header/>
               <Armario/>
+            </>
+          }/>
+          <Route 
+          path='/Categoria+Camisetas'
+          element={
+            <>
+              <Header/>
+              <Camisetas titulo="Camisetas"/>
+              <Footer/>
+            </>
+          }/>
+          <Route 
+          path='/Categoria+Blusas'
+          element={
+            <>
+              <Header/>
               <Footer/>
             </>
           }/>

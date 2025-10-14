@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Koulen&family=Krona+One&display=swap');
+
+#categoria-titulo{
+    margin: 1%;
+    color: white;
+    background-color: black;
+    font-family: 'Krona', sans-serif ;
+    align-items: center;
+    width: 350px;
+    height: 50px;
+    border-radius: 10px;
+    padding-left: 20px;
+    
+}

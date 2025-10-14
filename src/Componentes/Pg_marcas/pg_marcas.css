@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Koulen&family=Krona+One&display=swap');
 
 .painel{
     display: grid;
@@ -16,10 +17,9 @@
     justify-self: center;
     padding: 60px;
 
-    #umbro{
+    #img_log{
     height: 50px;
     width: auto;
     justify-self: center;
     align-self: center;
-}
-}
+}}
