@@ -9,11 +9,11 @@ function footer() {
                     <h1 class="titulo">Nos acompanhe:</h1>
                     <div class="container-icones">
                         <ul class="icones">
-                            <img src="./Logos/instagram.svg" alt="instagram" id="icon"/>
-                            <img src="./Logos/tiktok.svg" alt="tiktok" id="icon"/>
-                            <img src="./Logos/pinterest.svg" alt="pinterest" id="icon"/>
-                            <img src="./Logos/twitter-x.svg" alt="x" id="icon"/> 
-                            <img src="./Logos/facebook.svg" alt="facebook" id="icon"/>  
+                            <a href="/" target="_blank" rel="noopener noreferrer"><img src="./Logos/instagram.svg" alt="instagram" id="icon"/></a>
+                            <a href="/" target="_blank" rel="noopener noreferrer"><img src="./Logos/tiktok.svg" alt="tiktok" id="icon"/></a>
+                            <a href="/" target="_blank" rel="noopener noreferrer"><img src="./Logos/pinterest.svg" alt="pinterest" id="icon"/></a>
+                            <a href="/" target="_blank" rel="noopener noreferrer"><img src="./Logos/twitter-x.svg" alt="x" id="icon"/></a>
+                            <a href="/" target="_blank" rel="noopener noreferrer"><img src="./Logos/facebook.svg" alt="facebook" id="icon"/></a>  
                         </ul>
                     </div>
                 </div>

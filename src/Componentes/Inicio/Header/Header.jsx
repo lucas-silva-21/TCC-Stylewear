@@ -23,11 +23,14 @@ function menu() {
                 
                 <div className="part2">
                     <ul className="part2_marcas">
-                        <li><a href="/Umbro"><img src="/Logos/Logo_Umbro.png" alt="Umbro" /></a></li>
-                        <li><a href="/Nike"><img src="/Logos/nike_logo.png" alt="Nike" /></a></li>
+                        <li><a href="/Umbro"><img src="/Logos/Umbro_logo.png" alt="Umbro" /></a></li>
+                        <li><a href="/Nike"><img src="/Logos/Nike_logo.png" alt="Nike" /></a></li>
                         <li><a href="/Adidas"><img src="/Logos/Adidas_logo.png" alt="Adidas" /></a></li>
-                        <li><a href="/Lacoste"><img src="/Logos/lacoste-logo.png" alt="Lacoste" /></a></li>
-                        <li><a href="/Puma"><img src="/Logos/puma-logo.png" alt="Puma" /></a></li>
+                        {/* <li><a href="/PlanetGirls"><img src="/Logos/PlanetGirls_logo.png" alt="Planet Girls" /></a></li> */}
+                        <li><a href="/Lacoste"><img src="/Logos/Lacoste_logo.png" alt="Lacoste" /></a></li>
+                        <li><a href="/Puma"><img src="/Logos/Puma_logo.png" alt="Puma" /></a></li>
+                        {/* <li><a href="/Polo"><img src="/Logos/Polo_logo.png" alt="Polo" /></a></li> */}
+                        {/* <li><a href="/BadBoy"><img src="/Logos/BadBoy_logo2.png" alt="Bad Boy" /></a></li> */}
                     </ul>
                 </div>
             </header>

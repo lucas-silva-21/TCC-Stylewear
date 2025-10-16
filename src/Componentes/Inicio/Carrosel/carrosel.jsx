@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 import './Carrosel.css';
 
 const images = [
-  './recomendados/streetwear.jpeg',
-  './recomendados/y2k.jpeg',
-  './recomendados/sportlife.jpeg',
-  './recomendados/opium.jpeg',
+  './Recomendados/streetwear.jpeg',
+  './Recomendados/y2k.jpeg',
+  './Recomendados/sportlife.jpeg',
+  './Recomendados/opium.jpeg',
 ];
 
 const Carrosel = () => {

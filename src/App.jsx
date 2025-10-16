@@ -16,6 +16,8 @@ import Nike from './Componentes/Pg_marcas/pg_nike';
 import Lacoste from './Componentes/Pg_marcas/pg_lacoste';
 import Umbro from './Componentes/Pg_marcas/pg_umbro';
 import Puma from './Componentes/Pg_marcas/pg_puma';
+import PlanetGirls from './Componentes/Pg_marcas/pg_planetgirls';
+import BadBoy from './Componentes/Pg_marcas/pg_badboy';
 
 import Armario from './Componentes/Armario/Armario';
 
@@ -63,7 +65,7 @@ function App() {
         element={
           <>
             <Header/>
-            <Umbro painel='./Painel.Umbro.png' altpainel='Painel da marca Umbro' logo='./Logos/Logo_Umbro.png' altlog='Logo da Umbro'/>
+            <Umbro painel='./Painel/Painel.Umbro.png' altpainel='Painel da marca Umbro' logo='./Logos/Umbro_logo.png' altlog='Logo da Umbro'/>
             <Footer/>
           </>
         }/>
@@ -72,7 +74,7 @@ function App() {
           element={
             <>
               <Header/>
-              <Nike painel='./Painel.Nike.png' altpainel='Painel da marca Umbro' logo='./Logos/nike_logo.png' altlog='Logo da Nike'/>
+              <Nike painel='./Painel/Painel.Nike.png' altpainel='Painel da marca Umbro' logo='./Logos/Nike_logo.png' altlog='Logo da Nike'/>
               <Footer/>
             </>
           }/>
@@ -81,7 +83,7 @@ function App() {
           element={
             <>
               <Header/>
-              <Adidas painel='./Painel.Adidas.png' altpainel='Painel da marca Adidas' logo='./Logos/Adidas_logo.png' altlog='Logo da Adidas'/>
+              <Adidas painel='./Painel/Painel.Adidas.png' altpainel='Painel da marca Adidas' logo='./Logos/Adidas_logo.png' altlog='Logo da Adidas'/>
               <Footer/>
             </>
           }/>
@@ -90,7 +92,7 @@ function App() {
           element={
             <>
               <Header/>
-              <Lacoste painel='./Painel.Lacoste.png' altpainel='Painel da marca Lacoste' logo='./Logos/lacoste-logo.png' altlog='Logo da Lacoste'/>
+              <Lacoste painel='./Painel/Painel.Lacoste.png' altpainel='Painel da marca Lacoste' logo='./Logos/Lacoste_logo.png' altlog='Logo da Lacoste'/>
               <Footer/>
             </>
           }/>
@@ -99,7 +101,25 @@ function App() {
           element={
             <>
               <Header/>
-              <Puma painel='./Painel.Puma.png' altpainel='Painel da marca Puma' logo='./Logos/puma-logo.png' altlog='Logo da Puma'/>
+              <Puma painel='./Painel/Painel.Puma (2).png' altpainel='Painel da marca Puma' logo='./Logos/Puma_logo.png' altlog='Logo da Puma'/>
+              <Footer/>
+            </>
+          }/>
+          <Route 
+          path='/PlanetGirls'
+          element={
+            <>
+              <Header/>
+              <PlanetGirls painel='./Painel/Painel.PlanetGirls.png' altpainel='Painel da marca PlanetGirls' logo='./Logos/PlanetGirls_logo.png' altlog='Logo da Planet Girls'/>
+              <Footer/>
+            </>
+          }/>
+          <Route 
+          path='/BadBoy'
+          element={
+            <>
+              <Header/>
+              <BadBoy painel='./Painel/Painel.BadBoy.png' altpainel='Painel da marca BadBoy' logo='./Logos/BadBoy_logo.png' altlog='Logo da Bad Boy'/>
               <Footer/>
             </>
           }/>
