@@ -1,7 +1,8 @@
 import Seleção from './Crrsl/Crrsl';
+import Marcas_secund from '../Inicio/Marcas_secund/Marcas_secund';
 import './pg_marcas.css'
 
-function Umbro(props) {
+function BadBoy(props) {
 
     return (
         <>
@@ -16,9 +17,10 @@ function Umbro(props) {
                 <Seleção titulo="Calças" />
                 <Seleção titulo="Camisetas" />
             </div>
+            <Marcas_secund/>
             <div className='div-logo'><img src={props.logo} alt={props.altlog} id='img_log' /></div>
         </>
     )
 }
 
-export default Umbro;
+export default BadBoy;

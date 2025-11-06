@@ -56,6 +56,7 @@ function Carousel(props) {
   //     { item: '', img: './Calça1.png', alt: 'tenis', },
   // ];
 
+
   const DATA_UMBRO = {
     'Tênis': Array.from({ length: 12 }, () => ({
       item: '/',
@@ -101,7 +102,10 @@ function Carousel(props) {
           <div className="carousel2" ref={carouselRef}>
             {items.map((list, index) => (
               <div className='div-card' key={index}>
-                <a href={list.item}><img src={list.img} alt={list.alt} id='img-item'/></a>
+                <div class="form-check">
+                  <input class="form-check-input" type="checkbox" value="" id="checkDefault" />
+                </div>
+                <a href={list.item}><img src={list.img} alt={list.alt} id='img-item' /></a>
               </div>
             ))}
           </div>

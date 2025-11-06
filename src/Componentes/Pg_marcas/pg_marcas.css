@@ -13,12 +13,13 @@
         width: auto;
     }
 }
+
 .div-logo{
     justify-self: center;
-    padding: 60px;
+    padding: 20px 40px 40px 40px;
 
     #img_log{
-    height: 50px;
+    height: 65px;
     width: auto;
     justify-self: center;
     align-self: center;

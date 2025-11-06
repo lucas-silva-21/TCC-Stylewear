@@ -13,8 +13,16 @@
         align-content: center;
         font-size: 30px;
         padding: 5px;
-        width: 950px;
+        width: 1030px;
         height: 50px;
         border-radius: 10px;
     }
+}
+
+.div-fila{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 16%;
+    overflow: hidden;
 }

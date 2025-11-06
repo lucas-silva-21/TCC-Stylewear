@@ -37,6 +37,10 @@
             border-radius: 7px;
             object-fit: cover;
 
+            .form-check{
+                text-align: start;
+            }
+
             #img-item {
                 height: 120px;
                 width: auto;
