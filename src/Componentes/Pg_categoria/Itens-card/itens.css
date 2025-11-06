@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Koulen&family=Krona+One&display=swap');
 
 .div-card2 {
+    position: relative; /* ADICIONADO (Feito por IA)*/
     margin-left: 15px;
     margin-top: 15px;
     background-color: rgb(235 235 235);
@@ -9,14 +10,15 @@
     object-fit: cover;
 
     .form-check {
-        text-align: start;
+        text-align: end;
     }
 
     #img-item2 {
-        height: 150px;
-        width: auto;
+        max-height: 150px;
+        width: 150px;
         border-radius: 5px;
         object-fit: cover;
+        display: block; /* garante comportamento previsível (Feito por IA) */
     }
 }
 
@@ -30,6 +32,8 @@
     justify-content: 'center';
 }
 
+
+/* Feito por IA */
 /* Adicione/mescle estas regras com seu CSS existente */
 
 .hanger { position: relative; align-items: center; }
@@ -49,23 +53,70 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 34px;
-  height: 34px;
+  width: 28px;   /* tamanho reduzido */
+  height: 28px;
   border-radius: 6px;
+  background: rgba(0, 0, 0, 0.16); /* ligeiro fundo para contraste */
   transition: background-color .12s ease, color .12s ease;
-  color: #666;
   margin-right: 8px;
 }
 .hanger-label svg { width: 18px; height: 18px; display: block; }
 .hanger-checkbox:checked + .hanger-label {
-  background-color: rgba(0,123,255,0.08);
-  color: #007bff;
-}
-.hanger-checkbox:focus + .hanger-label {
-  box-shadow: 0 0 0 3px rgba(0,123,255,0.12);
+  /* Alterado para amarelo translúcido */
+  background-color: rgba(0, 0, 0, 0.16);
 }
 .hanger-icon-outline{
     width: 30px;
     height: 20px;
     filter: invert(34%) sepia(8%) saturate(747%) hue-rotate(190deg) brightness(91%) contrast(86%);
+}
+
+/* posicionar o hanger sobre a imagem */
+.div-card2 .form-check.hanger {
+  position: absolute;
+  top: 8px;      /* ajuste conforme desejar */
+  right: 8px;    /* ajuste conforme desejar */
+  z-index: 10;
+  margin: 0;     /* remover margens que empurram */
+  pointer-events: auto;
+}
+
+/* manter input escondido, label clicável */
+.hanger-checkbox {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ajustar tamanho do ícone e fundo do botão */
+.hanger-label {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;   /* tamanho reduzido */
+  height: 28px;
+  border-radius: 6px;
+  background: rgba(0, 0, 0, 0.16); /* ligeiro fundo para contraste */
+  transition: background-color .12s ease, color .12s ease;
+}
+
+/* imagem do cabide sobre a peça */
+.hanger-label .hanger-icon-outline {
+  width: 18px !important;
+  height: 18px !important;
+  object-fit: contain;
+  display: block;
+  filter: none; /* ou mantenha filtro se quiser cor */
+}
+
+/* estado checked */
+.hanger-checkbox:checked + .hanger-label {
+  background-color: #002EAD;
 }

@@ -12,6 +12,7 @@ function Cards() {
     <>
       {item_Blusas.map((list, index) => (
         <div className='div-card2' key={index}>
+          <img src={list.img} alt={list.alt} id='img-item2' />
           <div className="form-check hanger">
             <input
               className="hanger-checkbox"
@@ -23,8 +24,6 @@ function Cards() {
               <img src="/cabide.png" alt="cabide" className="hanger-icon-outline" />
             </label>
           </div>
-
-          <img src={list.img} alt={list.alt} id='img-item2' />
         </div>
       ))}
     </>

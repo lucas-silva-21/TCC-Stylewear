@@ -102,10 +102,18 @@ function Carousel(props) {
           <div className="carousel2" ref={carouselRef}>
             {items.map((list, index) => (
               <div className='div-card' key={index}>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" value="" id="checkDefault" />
+                <div className="form-check hanger">
+                  <input
+                    className="hanger-checkbox"
+                    type="checkbox"
+                    id={`hanger-blusa-${index}`}
+                    aria-label={`Selecionar blusa ${index + 1}`}
+                  />
+                  <label className="hanger-label" htmlFor={`hanger-blusa-${index}`}>
+                    <img src="/cabide.png" alt="cabide" className="hanger-icon-outline"/>
+                  </label>
                 </div>
-                <a href={list.item}><img src={list.img} alt={list.alt} id='img-item' /></a>
+                <a href={list.item}><img src={list.img} alt={list.alt} id='img-item'/></a>
               </div>
             ))}
           </div>

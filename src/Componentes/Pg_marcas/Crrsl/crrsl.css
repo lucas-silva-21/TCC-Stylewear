@@ -32,6 +32,7 @@
         }
 
         .div-card {
+            position: relative;
             background-color: rgb(235 235 235);
             padding: 2px;
             border-radius: 7px;
@@ -46,6 +47,7 @@
                 width: auto;
                 border-radius: 5px;
                 object-fit: cover;
+                display: block;
             }
         }
 
