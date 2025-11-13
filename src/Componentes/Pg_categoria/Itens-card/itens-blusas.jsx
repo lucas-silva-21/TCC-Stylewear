@@ -1,11 +1,13 @@
 import React from 'react';
 import './itens.css';
 
-function Cards() {
+function Cards({ images = ['/Categoria/Blusa_categ.png'], count }) {
+  const totalImages = images.length;
+  const itemCount = typeof count === 'number' ? count : totalImages;
 
-  const item_Blusas = new Array(24).fill(0).map(() => ({
-    img: '/Categoria/Blusa_categ.png',
-    alt: 'Blusa'
+  const item_Blusas = Array.from({ length: itemCount }, (_, i) => ({
+    img: images[i % images.length],
+    alt: `Blusa ${i + 1}º`
   }));
 
   return (

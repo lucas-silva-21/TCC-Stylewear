@@ -1,5 +1,5 @@
 import './pg_categoria.css'
-import Card from './Itens-card/itens-calças';
+import Card from './Itens-card/itens-calça';
 
 function Calça(props) {
 

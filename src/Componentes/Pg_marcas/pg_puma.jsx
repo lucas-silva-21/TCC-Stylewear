@@ -1,4 +1,4 @@
-import Carousel_Umbro from './Crrsl/Crrsl';
+import Seleção from './Crrsl/Crrsl_Puma';
 import Marcas_secund from '../Inicio/Marcas_secund/Marcas_secund';
 import './pg_marcas.css'
 
@@ -12,10 +12,7 @@ function Puma(props){
                 <span></span>
             </section>
             <div>
-                <Carousel_Umbro titulo="Tênis"/>
-                <Carousel_Umbro titulo="Shorts"/>
-                <Carousel_Umbro titulo="Calças" />
-                <Carousel_Umbro titulo="Camisetas"/>
+                <Seleção tituloTenis="Tênis" tituloShort="Shorts" tituloCalça="Calças" tituloCamiseta="Camisetas" tituloBlusa="Blusas" tituloBone="Bonés" tituloAcessorio="Acessórios"/>
             </div>
             <Marcas_secund/>
             <div className='div-logo'><img src={props.logo} alt={props.altlog} id='img_log'/></div>

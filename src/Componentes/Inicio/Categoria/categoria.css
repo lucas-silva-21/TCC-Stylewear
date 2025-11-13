@@ -2,16 +2,22 @@
 
 .fundo_dest {
     background-color: #d9d9d9;
-    margin: 20px 0px 20px 0px;
+    margin: 30px 0px -10px 0px;
     padding: 20px;
     overflow: hidden;
+    height: 200px;
+    font-family: 'Krona One', sans-serif;
+    align-content: center;
+    max-height: 160px;
 
     ul {
         list-style: none;
         justify-content: space-evenly;
         display: flex;
-        li{
-            a{
+        gap: 20px;
+
+        li {
+            a {
                 text-decoration: none;
                 color: black;
             }

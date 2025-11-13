@@ -76,13 +76,20 @@ header {
             img {
                 width: auto;
                 height: 35px;
+            }
 
+            img:hover {
+                transition: 0.2s;
+                height: 37px;
+                border-bottom: solid 2px rgba(0, 0, 0, 0.205);
+                padding-bottom: 15%;
             }
 
             #tt_dest1{
-                border-bottom: solid 1.5px black;
+                border-bottom: solid 2px black;
                 padding-bottom: 15%;
             }
+
 
             #tt_dest2{
                 border-bottom: solid 2px black;

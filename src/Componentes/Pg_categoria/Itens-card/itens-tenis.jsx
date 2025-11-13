@@ -7,6 +7,15 @@ function Cards() {
     alt: 'Tenis'
   }));
 
+{/*function Cards({ images = ['/Categoria/Blusa_categ.png'], count }) {
+  const totalImages = images.length;
+  const itemCount = typeof count === 'number' ? count : totalImages;
+
+  const item_Blusas = Array.from({ length: itemCount }, (_, i) => ({
+    img: images[i % images.length],
+    alt: `Item ${i + 1}`
+  })); */}
+
   return (
     <>
       {item_Tenis.map((list, index) => (
@@ -16,10 +25,10 @@ function Cards() {
             <input
               className="hanger-checkbox"
               type="checkbox"
-              id={`hanger-blusa-${index}`}
-              aria-label={`Selecionar blusa ${index + 1}`}
+              id={`hanger-tenis-${index}`}
+              aria-label={`Selecionar tenis ${index + 1}`}
             />
-            <label className="hanger-label" htmlFor={`hanger-blusa-${index}`}>
+            <label className="hanger-label" htmlFor={`hanger-tenis-${index}`}>
               <img src="/cabide.png" alt="cabide" className="hanger-icon-outline" />
             </label>
           </div>

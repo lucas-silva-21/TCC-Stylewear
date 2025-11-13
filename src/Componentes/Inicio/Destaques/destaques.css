@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Koulen&family=Krona+One&display=swap');
 
 .fundo_princ {
-    height: 380px;
+    max-height: 374px;
     background-color: #322388;
-    padding: 0px 0px 15px 0px;
+    margin-top: 4%;
+    padding: 0px 0px 30px 0px;
+    align-content: center;
 
     .fundo_crrsl {
         background-color: #322388;
@@ -12,8 +14,10 @@
         #titulo-destaque {
             color: #fff;
             font-family: "Krona One", sans-serif;
-            font-weight: 400;
+            font-weight: 600;
+            font-size: 27px;
             justify-self: center;
+            padding-bottom: 3px;
         }
 
         #linha {

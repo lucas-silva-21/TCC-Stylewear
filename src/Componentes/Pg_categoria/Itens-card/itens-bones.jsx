@@ -1,10 +1,12 @@
 import './itens.css'
 
-function Cards() {
+function Cards({ images = ['/Categoria/Bone_categ.png'], count }) {
+  const totalImages = images.length;
+  const itemCount = typeof count === 'number' ? count : totalImages;
 
-  const item_Bones = new Array(24).fill(0).map(() => ({
-    img: '/Categoria/Bone_categ.png',
-    alt: 'Boné'
+  const item_Bone = Array.from({ length: itemCount }, (_, i) => ({
+    img: images[i % images.length],
+    alt: `Item ${i + 1}`
   }));
 
   return (
@@ -16,10 +18,10 @@ function Cards() {
             <input
               className="hanger-checkbox"
               type="checkbox"
-              id={`hanger-blusa-${index}`}
-              aria-label={`Selecionar blusa ${index + 1}`}
+              id={`hanger-bone-${index}`}
+              aria-label={`Selecionar bone ${index + 1}`}
             />
-            <label className="hanger-label" htmlFor={`hanger-blusa-${index}`}>
+            <label className="hanger-label" htmlFor={`hanger-bone-${index}`}>
               <img src="/cabide.png" alt="cabide" className="hanger-icon-outline" />
             </label>
           </div>

@@ -1,33 +1,59 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Koulen&family=Krona+One&display=swap');
 
 .div_ms {
+
     margin: 4%;
     overflow: hidden;
 
     #text_ms {
+        transition: 0.2s;
         font-family: 'Krona One', sans-serif;
         color: #484848;
-        margin-bottom: 4%;
+        margin-bottom: 2%;
         justify-self: center;
     }
 
     .ul_ms {
         display: flex;
+        justify-self: center;
         justify-content: center;
         list-style: none;
         gap: 5%;
         flex-wrap: wrap;
 
         #bolha_ms {
+            transition: 1.5s;
             background-color: rgba(245, 245, 245, 0.99);
             border-radius: 20%;
             padding: 1%;
             object-fit: cover;
             margin-top: 20px;
+
+            #img_ms {
+                transition: 1.5s;
+                height: 60px;
+                width: auto;
+                object-fit: cover;
+            }
         }
+    }
+}
+
+.div_ms:hover {
+    #text_ms {
+        transition: 0.2s;
+        color: #322388;
+        font-family: 'Krona One', sans-serif;
+    }
+
+    #bolha_ms {
+        transition: 1.5s;
+        background-color: rgba(234, 234, 234, 0.99);
+        border-radius: 15%;
 
         #img_ms {
-            height: 60px;
+            transition: 1.5s;
+            height: 63px;
             width: auto;
             object-fit: cover;
         }

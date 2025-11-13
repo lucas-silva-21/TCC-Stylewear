@@ -1,21 +1,52 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Koulen&family=Krona+One&display=swap');
 
-.div-dest{
+.div-dest {
+    transition: 0.2s;
     display: flex;
     flex-direction: column;
     align-items: center;
+    max-height: 160px;
+    max-width: 150px;
 
-    #foto{
+    #foto {
+        transition: 0.35s;
         height: 120px;
         width: 120px;
         border-radius: 100%;
         border: none;
     }
 
-    #texto{
+    #texto {
+        transition: 0.2s;
         margin-top: 5px;
-        font-family: 'Krona One', sans-serif;
         font-size: medium;
         font-weight: 700;
+        padding-bottom: 5px;
+        font-family: 'Krona One', sans-serif;
+    }
+}
+
+.div-dest:hover {
+    transition: 0.2s;
+    border-bottom: 1.5px solid white;
+    max-width: 200px;
+    max-height: 160px;
+
+    #foto {
+        transition: 0.2s;
+        height: 125px;
+        width: 125px;
+        border: 2px solid white;
+    }
+
+    #foto {
+        transition: 0.35s;
+        border-radius: 30%;
+    }
+
+    #texto {
+        transition: 0.2s;
+        color: white;
+        font-family: 'Krona One', sans-serif;
     }
 }

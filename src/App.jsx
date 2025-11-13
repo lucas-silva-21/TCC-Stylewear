@@ -27,17 +27,19 @@ import Surfgang from './Componentes/Pg_marcas/pg_surfgang';
 
 import Armario from './Componentes/Armario/Armario';
 
+import Conjunto from './Componentes/Pg_Destaque/Pg_destaque';
+
 import Blusas from './Componentes/Pg_categoria/pg_blusas';
 import Camisetas from './Componentes/Pg_categoria/pg_camisetas';
 import Calças from './Componentes/Pg_categoria/pg_calças';
-import Shorts from './Componentes/Pg_categoria/pg_shorts';
+import Shorts from './Componentes/Pg_categoria/pg_short';
+import Acessorio from './Componentes/Pg_categoria/pg_acessorio';
 import Tenis from './Componentes/Pg_categoria/pg_tenis';
 import Bones from './Componentes/Pg_categoria/pg_bones';
 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 function App() {
-  const [count, setCount] = useState(0);
 
   return (
     <Router>
@@ -47,10 +49,11 @@ function App() {
             <>
               <Header />
               <Capa />
+              
               <Destaques />
               <Categoria />
               <Container1 />
-              <Carrosel />
+              {/* <Carrosel /> */}
               <Marcas_secund />
               <Footer />
             </>
@@ -198,11 +201,11 @@ function App() {
             </>
           } />
         <Route
-          path='/Categoria+Camisetas'
+          path='/Categoria+Parte_superior'
           element={
             <>
               <Header />
-              <Camisetas titulo="Camisetas" />
+              <Camisetas titulo="Parte de cima" />
               <Marcas_secund/>
               <Footer />
             </>
@@ -217,6 +220,17 @@ function App() {
               <Footer />
             </>
           } />
+          <Route
+          path='/Categoria+Parte_inferior'
+          element={
+            <>
+              <Header />
+              <Calças titulo="Parte de baixo"/>
+              <Marcas_secund/>
+              <Footer />
+            </>
+          } />
+
           <Route
           path='/Categoria+Calças'
           element={
@@ -237,6 +251,17 @@ function App() {
               <Footer />
             </>
           } />
+
+          <Route
+          path='/Categoria+Acessorios'
+          element={
+            <>
+              <Header />
+              <Acessorio titulo="Acessórios"/>
+              <Marcas_secund/>
+              <Footer />
+            </>
+          } />
           <Route
           path='/Categoria+Tenis'
           element={
@@ -253,6 +278,16 @@ function App() {
             <>
               <Header />
               <Bones titulo="Bonés"/>
+              <Marcas_secund/>
+              <Footer />
+            </>
+          } />
+          <Route
+          path='/Destaque+OldMoney'
+          element={
+            <>
+              <Header />
+              <Conjunto />
               <Marcas_secund/>
               <Footer />
             </>
