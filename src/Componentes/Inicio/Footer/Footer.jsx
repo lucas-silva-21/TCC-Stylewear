@@ -44,6 +44,12 @@ function footer() {
                             <a>Termos de venda</a><br />
                             <a>Segurança</a></a>
                         </div>
+                        <div class="text">
+                            <h1 class="titulo2">Programadores:</h1><br />
+                            <a>Lucas da Sliva O.(Desenvolvedor Master)</a><br />
+                            <a>Gustavo Sirol M.(Desenvolvedor Front-end)</a><br />
+                            <a>Richard Silva D.(Desenvolvedor Back-end)</a><br />
+                        </div>
                     </div>
                 </div>
             </footer>

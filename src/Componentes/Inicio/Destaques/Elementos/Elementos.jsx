@@ -4,14 +4,16 @@ import './elementos.css'
 function elemento_dest(props) {
     return (
         <>
-            <section className="elemento">
-                <div className="part1">
-                    <a href=""><img src={props.img} id="foto-dest" alt="Foto1_destaque"></img></a>
-                </div>
-                <div className="part2">
-                    <h2 id="text">{props.text}</h2>
-                </div>
-            </section>
+            <a href={props.link}>
+                <section className="elemento">
+                    <div className="part1">
+                        <img src={props.img} id="foto-dest" alt="Foto1_destaque"></img>
+                    </div>
+                    <div className="part2">
+                        <h2 id="text">{props.text}</h2>
+                    </div>
+                </section>
+            </a>
         </>
     )
 };

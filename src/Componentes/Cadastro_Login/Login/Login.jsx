@@ -19,8 +19,6 @@ function login() {
                 </div>
 
                 <div className="sla">
-                    <a href="/login" id="C-text">Entrar</a>
-                    <h2>|</h2>
                     <a href="/cadastro" id="C-text">Cadastro</a>
                 </div>
 

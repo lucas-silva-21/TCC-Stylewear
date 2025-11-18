@@ -27,7 +27,7 @@ import Surfgang from './Componentes/Pg_marcas/pg_surfgang';
 
 import Armario from './Componentes/Armario/Armario';
 
-import Conjunto from './Componentes/Pg_Destaque/Pg_destaque';
+import Conjunto from './Componentes/Pg_Destaque/Ct_destaque';
 
 import Blusas from './Componentes/Pg_categoria/pg_blusas';
 import Camisetas from './Componentes/Pg_categoria/pg_camisetas';
@@ -287,8 +287,43 @@ function App() {
           element={
             <>
               <Header />
-              <Conjunto />
-              <Marcas_secund/>
+              <Conjunto estilo='OldMoney' />
+              <Footer />
+            </>
+          } />
+          <Route
+          path='/Destaque+SportLife'
+          element={
+            <>
+              <Header />
+              <Conjunto estilo='SportLife' />
+              <Footer />
+            </>
+          } />
+          <Route
+          path='/Destaque+StreetWear'
+          element={
+            <>
+              <Header />
+              <Conjunto estilo='StreetWear' />
+              <Footer />
+            </>
+          } />
+          <Route
+          path='/Destaque+Y2K'
+          element={
+            <>
+              <Header />
+              <Conjunto estilo='Y2K' />
+              <Footer />
+            </>
+          } />
+          <Route
+          path='/Destaque+SportWear'
+          element={
+            <>
+              <Header />
+              <Conjunto estilo='SportWear' />
               <Footer />
             </>
           } />

@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Koulen&family=Krona+One&family=Playwrite+CZ:wght@100..400&display=swap');
+
+.div-princ-dest {
+    background-color: #ffffff;
+    min-height: 500px;
+    min-width: 700px;
+    justify-self: center;
+    margin-top: 2%;
+    margin-bottom: 4%;
+    border-radius: 3%;
+    border: 1.5px solid #000000;
+    border-bottom: 0px;
+    border-top: 0px;
+    box-sizing: border-box;
+
+    .section-estilo {
+        background-color: #751e8b;
+        border-radius: 17px 17px 0px 0px;
+        border-top: 1.5px solid #000000;
+        height: 115px;
+
+        div {
+            background-color: white;
+            max-height: 50px;
+
+            h1 {
+                text-align: center;
+                font-family: 'Playwrite CZ', sans-serif;
+                color: #000000;
+            }
+        }
+
+
+        h5 {
+            text-align: center;
+            font-family: 'Koulen', sans-serif;
+            color: #ffffff;
+        }
+
+        h4 {
+            text-align: center;
+            font-family: 'Koulen', sans-serif;
+            color: #ffffff;
+        }
+    }
+
+    .section-dest {
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto;
+        padding-top: 2%;
+        margin-bottom: 2%;
+
+        #outfit_img {
+            max-height: 350px;
+            width: auto;
+            margin-left: 20px;
+            border-radius: 5%;
+            border: 1px solid #cccccc;
+            object-fit: cover;
+            align-self: center;
+        }
+
+        .div-info-dest {
+
+            .ul-info-dest {
+                display: flex;
+                list-style: none;
+                height: auto;
+                margin-left: 35px;
+                gap: 30px;
+                padding: 5px;
+                align-self: center;
+
+                li {
+                    display: grid;
+                    grid-template-rows: 1fr auto;
+                    justify-items: center;
+                    align-items: center;
+                    background-color: #eeeeee;
+                    min-height: 170px;
+                    max-width: 170px;
+                    min-width: 170px;
+                    border-radius: 5%;
+
+                    #img {
+                        max-height: 150px;
+                        max-width: 150px;
+                        border-radius: 5%;
+                    }
+
+                    #img-calça {
+                        max-height: 130px;
+                        max-width: 150px;
+                        border-radius: 5%;
+                    }
+
+
+                    .div-descrição {
+                        margin-top: 5px;
+                        background-color: #4e409d;
+                        min-height: 20px;
+                        width: 100%;
+                        border-radius: 0px 0px 10px 10px;
+                        border-top: 2px solid #727272;
+                        color: #ffffff;
+                        text-align: center;
+                    }
+                }
+            }
+        }
+    }
+}
