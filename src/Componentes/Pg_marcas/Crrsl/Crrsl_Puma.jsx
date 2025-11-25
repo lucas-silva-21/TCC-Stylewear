@@ -25,16 +25,83 @@ function Carousel(props) {
 
   // defina aqui os arrays de imagens (caminhos absolutos na pasta public)
   const DATA_UMBRO = {
-    'Tênis': makeItems(['/Pg_Puma/Tenis1.png', '/Pg_Puma/Tenis2.png'], 24, 'Tênis Umbro'),
-    'Shorts': makeItems(['/Pg_Puma/Short1.png', '/Pg_Puma/Short2.png' , '/Pg_Puma/Short3.png'], 24, 'Short Umbro'),
-    'Calças': makeItems(['/Pg_Puma/Calça1.png', '/Pg_Puma/Calça2.png'], 24, 'Calça Umbro'),
-    'Camisetas': makeItems(['/Pg_Puma/Camiseta1.png'], 24, 'Camiseta Umbro'),
-    'Blusas': makeItems(['/Pg_Puma/Blusa1.png'], 24, 'Blusa Umbro'),
-    'Bonés': makeItems(['/Pg_Puma/Bone1.png'], 24, 'Boné Umbro'),
-    'Acessórios': makeItems(['/Pg_Puma/Acessorio1.png', '/Pg_Puma/Acessorio2.png'], 24, 'Acessório Umbro'),
+    'Tênis': makeItems([
+      'Fotos - TCC (puma/t1.png',
+      'Fotos - TCC (puma/t2.png',
+      'Fotos - TCC (puma/t3.png',
+      'Fotos - TCC (puma/t4.png',
+      'Fotos - TCC (puma/t5.png',
+      'Fotos - TCC (puma/t6.png',
+      'Fotos - TCC (puma/t7.png',
+      'Fotos - TCC (puma/t8.png',
+      'Fotos - TCC (puma/t9.png',
+      'Fotos - TCC (puma/t10.png',
+      'Fotos - TCC (puma/t11.png',
+      'Fotos - TCC (puma/t12.png',
+      'Fotos - TCC (puma/t13.png',
+      'Fotos - TCC (puma/t14.png',
+      'Fotos - TCC (puma/t15.png'],
+      24,
+      'Tênis puma'
+    ),
+    'Shorts': makeItems([
+      'Fotos - TCC (puma/s1.png',
+      'Fotos - TCC (puma/s2.png',
+      'Fotos - TCC (puma/s3.png',
+      'Fotos - TCC (puma/s4.png',
+      'Fotos - TCC (puma/s5.png',
+      'Fotos - TCC (puma/s6.png',
+      'Fotos - TCC (puma/s7.png',
+      'Fotos - TCC (puma/s8.png',
+      'Fotos - TCC (puma/s9.png',
+      'Fotos - TCC (puma/s10.png',
+      'Fotos - TCC (puma/s12.png',
+      'Fotos - TCC (puma/s13.png',
+      'Fotos - TCC (puma/s14.png',
+      'Fotos - TCC (puma/s15.png'],
+      24,
+      'Short puma'
+    ),
+    'Calças': makeItems([
+      'Fotos - TCC (puma/c1.png',
+      'Fotos - TCC (puma/c2.png',
+      'Fotos - TCC (puma/c3.png',
+      'Fotos - TCC (puma/c4.png',
+      'Fotos - TCC (puma/c5.png',
+      'Fotos - TCC (puma/c6.png',
+      'Fotos - TCC (puma/c7.png',
+      'Fotos - TCC (puma/c8.png',
+      'Fotos - TCC (puma/c9.png',
+      'Fotos - TCC (puma/c10.png', 
+      'Fotos - TCC (puma/c11.png',
+      'Fotos - TCC (puma/c12.png',
+      'Fotos - TCC (puma/c13.png',
+      'Fotos - TCC (puma/c14.png',
+      'Fotos - TCC (puma/c15.png'],
+      24,
+      'Calça puma'
+    ),
+    'Camisetas': makeItems([
+      'Fotos - TCC (puma/b1.png',
+      'Fotos - TCC (puma/b2.png',
+      'Fotos - TCC (puma/b3.png',
+      'Fotos - TCC (puma/b4.png',
+      'Fotos - TCC (puma/b5.png',
+      'Fotos - TCC (puma/b6.png',
+      'Fotos - TCC (puma/b7.png',
+      'Fotos - TCC (puma/b8.png',
+      'Fotos - TCC (puma/b9.png',
+      'Fotos - TCC (puma/b10.png', 
+      'Fotos - TCC (puma/b11.png',
+      'Fotos - TCC (puma/b12.png',
+      'Fotos - TCC (puma/b13.png',
+      'Fotos - TCC (puma/b14.png',
+      'Fotos - TCC (puma/b15.png'],
+      24,
+      'Camiseta puma'
+    ),
   };
 
-  // função de scroll que recebe o ref do carrossel desejado
   const scroll = (ref, direction) => {
     const el = ref?.current;
     if (!el) return;
@@ -50,9 +117,6 @@ function Carousel(props) {
   const itemsShort = DATA_UMBRO[tituloShort] || [];
   const itemsCamiseta = DATA_UMBRO[tituloCamiseta] || [];
   const itemsCalça = DATA_UMBRO[tituloCalça] || [];
-  const itemsBlusa = DATA_UMBRO[tituloBlusa] || [];
-  const itemsBone = DATA_UMBRO[tituloBone] || [];
-  const itemsAcessorio = DATA_UMBRO[tituloAcessorio] || [];
 
   return (
     <>
@@ -141,34 +205,6 @@ function Carousel(props) {
       </div>
 
       <div className='caroseul-seleção'>
-        <h1 id='titulo'>{tituloBlusa}</h1>
-        <div className='caroseul'>
-          <button onClick={() => scroll(carouselRefBlusa, 'left')} id='left'>&#8249;</button>
-
-          <div className="carousel2" ref={carouselRefBlusa}>
-            {itemsBlusa.map((list, index) => (
-              <div className='div-card' key={index}>
-                <div className="form-check hanger">
-                  <input
-                    className="hanger-checkbox"
-                    type="checkbox"
-                    id={`hanger-blusa-${index}`}
-                    aria-label={`Selecionar blusa ${index + 1}`}
-                  />
-                  <label className="hanger-label" htmlFor={`hanger-blusa-${index}`}>
-                    <img src="/cabide.png" alt="cabide" className="hanger-icon-outline" />
-                  </label>
-                </div>
-                <img src={list.img} alt={list.alt} id='img-item' />
-              </div>
-            ))}
-          </div>
-
-          <button onClick={() => scroll(carouselRefBlusa, 'right')} id='right'>&#8250;</button>
-        </div>
-      </div>
-
-      <div className='caroseul-seleção'>
         <h1 id='titulo'>{tituloCalça}</h1>
         <div className='caroseul'>
           <button onClick={() => scroll(carouselRefCalça, 'left')} id='left'>&#8249;</button>
@@ -193,34 +229,6 @@ function Carousel(props) {
           </div>
 
           <button onClick={() => scroll(carouselRefCalça, 'right')} id='right'>&#8250;</button>
-        </div>
-      </div>
-
-      <div className='caroseul-seleção'>
-        <h1 id='titulo'>{tituloBone}</h1>
-        <div className='caroseul'>
-          <button onClick={() => scroll(carouselRefBone, 'left')} id='left'>&#8249;</button>
-
-          <div className="carousel2" ref={carouselRefBone}>
-            {itemsBone.map((list, index) => (
-              <div className='div-card' key={index}>
-                <div className="form-check hanger">
-                  <input
-                    className="hanger-checkbox"
-                    type="checkbox"
-                    id={`hanger-bone-${index}`}
-                    aria-label={`Selecionar bone ${index + 1}`}
-                  />
-                  <label className="hanger-label" htmlFor={`hanger-bone-${index}`}>
-                    <img src="/cabide.png" alt="cabide" className="hanger-icon-outline" />
-                  </label>
-                </div>
-                <img src={list.img} alt={list.alt} id='img-item' />
-              </div>
-            ))}
-          </div>
-
-          <button onClick={() => scroll(carouselRefBone, 'right')} id='right'>&#8250;</button>
         </div>
       </div>
 

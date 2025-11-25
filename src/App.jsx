@@ -53,7 +53,7 @@ function App() {
               <Destaques />
               <Categoria />
               <Container1 />
-              {/* <Carrosel /> */}
+              <Carrosel />
               <Marcas_secund />
               <Footer />
             </>

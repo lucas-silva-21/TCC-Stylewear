@@ -14,6 +14,7 @@ function Menu(props) {
 
                     <div>
                         <input placeholder="Pesquisar" class="Busca"></input>
+                        {/* <span></span> */}
                     </div>
 
                     {isLoggedIn ? (
