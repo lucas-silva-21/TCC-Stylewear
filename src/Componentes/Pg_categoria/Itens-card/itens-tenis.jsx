@@ -1,20 +1,14 @@
 import './itens.css'
 
-function Cards() {
 
-  const item_Tenis = new Array(24).fill(0).map(() => ({
-    img: '/Categoria/Tenis_categ.png',
-    alt: 'Tenis'
-  }));
-
-{/*function Cards({ images = ['/Categoria/Blusa_categ.png'], count }) {
+function Cards({ images = ['/Categoria/Tenis_categ.png'], count }) {
   const totalImages = images.length;
   const itemCount = typeof count === 'number' ? count : totalImages;
 
-  const item_Blusas = Array.from({ length: itemCount }, (_, i) => ({
+  const item_Tenis = Array.from({ length: itemCount }, (_, i) => ({
     img: images[i % images.length],
     alt: `Item ${i + 1}`
-  })); */}
+  }));
 
   return (
     <>

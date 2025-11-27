@@ -58,6 +58,17 @@ header {
             }
         }
 
+        #t_usuario{
+            transition: 0.5s;
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        #t_usuario:hover{
+            transition: 0.5s;
+            color: #9ca1ba;
+            text-decoration: underline;
+        }
     }
 
     .part2 {

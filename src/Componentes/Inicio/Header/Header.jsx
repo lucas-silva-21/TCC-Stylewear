@@ -21,17 +21,17 @@ function Menu(props) {
                         <>
                             <a href="/Armario" id="cabide"><img src="/cabide.png" alt="cabide" id="cabide-img" /></a>
                             <h2>|</h2>
-                            <span id="H-text">Olá, {user?.name || 'Usuário'}</span>
+                            <span id="H-text">Olá <a href='/Usuario' id='t_usuario'>{user?.name || ' Usuário'}</a></span>
                             <h2>|</h2>
-                            <button onClick={logout} id="H-text">Sair</button>
+                            <span></span>
                         </>
                     ) : (
                         <>
                             <a href="/Armario" id="cabide"><img src="/cabide.png" alt="cabide" id="cabide-img" /></a>
                             <h2>|</h2>
-                            <a href="/login" id="H-text">Entrar</a>
+                            <a href="/Login" id="H-text">Entrar</a>
                             <h2>|</h2>
-                            <a href="/cadastro" id="H-text">Cadastro</a>
+                            <a href="/Cadastro" id="H-text">Cadastro</a>
                             <span></span>
                         </>
                     )}

@@ -12,7 +12,7 @@ function categoria_inicial() {
                         <li><a href="/Categoria+Calças"><Bolha text="Calça" img="./Categoria/Calça_categ.png" alt="Imagem de Calça"/></a></li>
                         {/* <li><a href="/Categoria+Acessorios"><Bolha text="Acessorios" img="./Categoria/Acessorio_categ.png" alt="Imagem de Short"/></a></li> */}
                         <li><a href="/Categoria+Shorts"><Bolha text="Shorts" img="./Categoria/Short_categ.png" alt="Imagem de Short"/></a></li>
-                        <li><a href="/Categoria+Parte_superior"><Bolha text="Parte de cima" img="./Categoria/Camiseta_categ.png" alt="Imagem de Camiseta"/></a></li>
+                        <li><a href="/Categoria+Parte_superior"><Bolha text="Camiseta" img="./Categoria/Camiseta_categ.png" alt="Imagem de Camiseta"/></a></li>
                         <li><a href="/Categoria+Tenis"><Bolha text="Tênis" img="./Categoria/Tenis_categ.png" alt="Imagem de Tênis"/></a></li>
                         <li><a href="/Categoria+Bones"><Bolha text="Bonés" img="./Categoria/Bone_categ.png" alt="Imagem de Boné" id="bone"/></a></li>
                     </ul>

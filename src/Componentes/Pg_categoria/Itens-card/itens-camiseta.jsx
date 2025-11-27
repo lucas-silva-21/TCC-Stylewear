@@ -19,10 +19,10 @@ function Cards({ images = ['/Categoria/Camiseta_categ.png', '/Categoria/Camiseta
             <input
               className="hanger-checkbox"
               type="checkbox"
-              id={`hanger-part_cima-${index}`}
-              aria-label={`Selecionar part_cima ${index + 1}`}
+              id={`hanger-camiseta-${index}`}
+              aria-label={`Selecionar camiseta ${index + 1}`}
             />
-            <label className="hanger-label" htmlFor={`hanger-part_cima-${index}`}>
+            <label className="hanger-label" htmlFor={`hanger-camiseta-${index}`}>
               <img src="/cabide.png" alt="cabide" className="hanger-icon-outline" />
             </label>
           </div>

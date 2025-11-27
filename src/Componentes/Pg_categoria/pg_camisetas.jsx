@@ -1,5 +1,5 @@
 import './pg_categoria.css'
-import Card from './Itens-card/itens-part_cima';
+import Card from './Itens-card/itens-camiseta';
 
 function Camisetas(props) {
 

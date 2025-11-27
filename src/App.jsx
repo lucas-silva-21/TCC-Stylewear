@@ -11,6 +11,7 @@ import Footer from './Componentes/Inicio/Footer/Footer';
 
 import Cadastro from './Componentes/Cadastro_Login/Cadastro/Cadastro';
 import Login from './Componentes/Cadastro_Login/Login/Login';
+import Usuario from './Componentes/Usuario/usuario';
 
 import Adidas from './Componentes/Pg_marcas/pg_adidas';
 import Nike from './Componentes/Pg_marcas/pg_nike';
@@ -60,7 +61,7 @@ function App() {
           }
         />
         <Route
-          path="/cadastro"
+          path="/Cadastro"
           element={
             <>
               <Cadastro />
@@ -68,10 +69,19 @@ function App() {
           }
         />
         <Route
-          path="/login"
+          path="/Login"
           element={
             <>
               <Login />
+            </>
+          }
+        />
+        <Route
+          path="/Usuario"
+          element={
+            <>
+              <Header/>
+              <Usuario />
             </>
           }
         />
@@ -205,7 +215,7 @@ function App() {
           element={
             <>
               <Header />
-              <Camisetas titulo="Parte de cima" />
+              <Camisetas titulo="Camiseta" />
               <Marcas_secund/>
               <Footer />
             </>
