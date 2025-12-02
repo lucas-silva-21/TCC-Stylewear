@@ -126,3 +126,11 @@ header {
     }
 }
 
+.logado{
+
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    margin-left: 10px;
+    padding-bottom: 4px;
+}

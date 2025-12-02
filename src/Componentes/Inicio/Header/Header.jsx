@@ -21,8 +21,7 @@ function Menu(props) {
                         <>
                             <a href="/Armario" id="cabide"><img src="/cabide.png" alt="cabide" id="cabide-img" /></a>
                             <h2>|</h2>
-                            <span id="H-text">Olá <a href='/Usuario' id='t_usuario'>{user?.name || ' Usuário'}</a></span>
-                            <h2>|</h2>
+                            <span className='logado' id="H-text">Olá <a href='/Usuario' id='t_usuario'>{user?.name || ' Usuário'}</a></span>
                             <span></span>
                         </>
                     ) : (
