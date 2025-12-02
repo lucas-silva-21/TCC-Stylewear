@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Koulen&family=Krona+One&display=swap');
 
 .container_cadast {
+    width: 50%;
     color: #000000;
     background-color: #ffffff;
     justify-self: center;
@@ -87,15 +88,23 @@
 
     .sla {
         display: flex;
-        justify-items: center;
-        justify-content: center;
+        flex-direction: column;
+        justify-self: center;
 
+        .Login-Cadast{
+            display: flex;
+            justify-self: center;
+            align-self: center;
+            padding: 5px;
+        }
         #C-text {
             align-self: center;
-            font-family: 'Koulen', sans-serif;
+            justify-self: center;
+            font-family: 'Figma Sans', sans-serif;
             padding: 0px 10px 0px 10px;
             color: rgb(56, 42, 255);
             text-decoration: none;
+            font-weight: bold;
         }
     }
 

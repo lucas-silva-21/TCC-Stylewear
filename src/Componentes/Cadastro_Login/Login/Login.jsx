@@ -1,35 +1,101 @@
-import "./login.css"
+import React, { useState } from "react";
+import { useNavigate, Link } from 'react-router-dom';
+import "./login.css";
 
-function login() {
+const API_LOGIN = "http://localhost:3000/api/clients/login";
+
+function Login() {
+    const navigate = useNavigate();
+    const [identifier, setIdentifier] = useState(""); // email or username
+    const [senha, setSenha] = useState("");
+    const [erro, setErro] = useState("");
+
+    const enviarLogin = async (e) => {
+        e.preventDefault();
+        setErro("");
+
+        if (!identifier || !senha) {
+            setErro('Preencha os campos.');
+            return;
+        }
+
+        try {
+            const body = {
+                senha,
+            };
+
+            // Detecta se o identificador parece ser um email
+            if (identifier.includes('@')) body.email = identifier;
+            else body.name = identifier;
+
+            const resp = await fetch(API_LOGIN, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(body),
+            });
+
+            const data = await resp.json().catch(() => ({}));
+
+            if (!resp.ok) {
+                throw new Error(data.error || 'Erro ao autenticar.');
+            }
+
+            // Salva usuário no localStorage (apenas id/name/email)
+            localStorage.setItem('user', JSON.stringify(data));
+
+            // navega para rota principal
+            navigate('/');
+        } catch (err) {
+            console.error(err);
+            setErro(err.message || 'Erro ao autenticar.');
+        }
+    };
+
     return (
         <>
-            <div class="container_login">
-                <div class="Titulo">
-                    <h1 class="text">Entrar</h1>
+            <div className="container_login">
+                <div className="Titulo">
+                    <h1 className="text">Entrar</h1>
                 </div>
 
-                <div class="mb-1">
-                    <label for="exampleFormControlInput1" class="form-label">Nome de usuario:</label>
-                    <input type="usuario" placeholder="Nome de usuario ..." className="form" id="exampleFormControlInput1" />
-                </div>
+                <form onSubmit={enviarLogin}>
+                    <div className="mb-1">
+                        <label htmlFor="identifier" className="form-label">Email ou Nome de usuário:</label>
+                        <input
+                            id="identifier"
+                            type="text"
+                            placeholder="Email ou nome de usuário..."
+                            className="form"
+                            value={identifier}
+                            onChange={(e) => setIdentifier(e.target.value)}
+                        />
+                    </div>
 
-                <div class="mb-2">
-                    <label for="inputPassword5" class="form-label">Senha:</label>
-                    <input type="password" id="inputPassword5" class="form" aria-describedby="passwordHelpBlock" placeholder="Senha ..."></input>
-                </div>
+                    <div className="mb-2">
+                        <label htmlFor="senha" className="form-label">Senha:</label>
+                        <input
+                            id="senha"
+                            type="password"
+                            className="form"
+                            placeholder="Senha ..."
+                            value={senha}
+                            onChange={(e) => setSenha(e.target.value)}
+                        />
+                    </div>
 
-                <div className="sla">
-                    <a href="/cadastro" id="C-text">Cadastro</a>
-                </div>
+                    {erro && <p className="erro">{erro}</p>}
 
-                <div class="col-auto">
-                    <a href="/"><button type="submit" class="btn-entrar">Entrar</button></a>
-                </div>
+                    <div className="sla">
+                        <Link to="/cadastro" id="C-text">Cadastro</Link>
+                    </div>
 
+                    <div className="col-auto">
+                        <button type="submit" className="btn-entrar">Entrar</button>
+                    </div>
+                </form>
             </div>
         </>
-
-    )
+    );
 }
 
-export default login;
+export default Login;

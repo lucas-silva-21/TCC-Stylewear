@@ -1,48 +1,160 @@
-import "./cadastro.css"
+import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
+import "./cadastro.css";
 
-function cadastro() {
-    return (
-        <>
-            <div class="container_cadast">
-                <div className="Titulo">
-                    <h1 class="text">Cadastre-se</h1>
-                </div>
+const API_URL = "http://localhost:3000/api/clients";
 
-                <div class="mb-1">
-                    <label for="exampleFormControlInput1" class="form-label">Nome de usuario:</label>
-                    <input type="usurio" placeholder="Nome de usuario ..." className="form" id="exampleFormControlInput1" />
-                </div>
+function Cadastro() {
+  const navigate = useNavigate();
+  const [nome, setNome] = useState("");
+  const [email, setEmail] = useState("");
+  const [senha, setSenha] = useState("");
+  const [confirmarSenha, setConfirmarSenha] = useState("");
+  const [erro, setErro] = useState("");
+  const [sucesso, setSucesso] = useState("");
 
-                <div class="mb-1">
-                    <label for="exampleFormControlInput1" class="form-label">Email:</label>
-                    <input type="email" placeholder="Nome@gmail.com" className="form" id="exampleFormControlInput1" />
-                </div>
+  const enviarUsuario = async (e) => {
+    e.preventDefault();
+    setErro("");
+    setSucesso("");
 
-                <div class="mb-2">
-                    <label for="inputPassword5" class="form-label">Senha:</label>
-                    <input type="password" id="inputPassword5" class="form" aria-describedby="passwordHelpBlock" placeholder="Senha ..."></input>
-                    <div id="passwordHelpBlock" class="form-text">
-                        Sua senha deve ter de 8 a 20 caracteres, conter letras e números e não deve conter espaços, caracteres especiais ou emoji.
-                    </div>
-                </div>
+    if (!nome || !email || !senha || !confirmarSenha) {
+      setErro("Preencha todos os campos.");
+      return;
+    }
 
-                <div class="mb-1">
-                    <label for="inputPassword5" class="form-label">Confirme a senha:</label>
-                    <input type="password" id="inputPassword5" class="form" aria-describedby="passwordHelpBlock" placeholder="Corfirme a senha ..."></input>
-                </div>
+    if (senha !== confirmarSenha) {
+      setErro("As senhas não coincidem.");
+      return;
+    }
 
-                <div className="sla">
-                    <a href="/login" id="C-text">Entrar</a>
-                </div>
+    try {
+      const resposta = await fetch(API_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: nome, 
+          email: email,
+          senha: senha,
+        }),
+      });
 
-                <div class="col-auto">
-                    <a href="/"><button type="submit" class="btn-cadast">Cadastrar-se</button></a>
-                </div>
+      const data = await resposta.json().catch(() => ({}));
 
+      if (!resposta.ok) {
+        throw new Error(data.error || "Erro ao cadastrar usuário.");
+      }
+
+      const nomeResposta = data.name || nome;
+
+      setSucesso(`${nomeResposta} cadastrado(a) com sucesso!`);
+      setErro("");
+
+      setNome("");
+      setEmail("");
+      setSenha("");
+      setConfirmarSenha("");
+
+      // navega para rota "/" após 1.5s
+      setTimeout(() => {
+        navigate('/');
+      }, 1500);
+    } catch (error) {
+      console.error(error);
+      setErro(error.message || "Erro ao cadastrar usuário.");
+      setSucesso("");
+    }
+  };
+
+  return (
+    <>
+      <div className="container_cadast">
+        <div className="Titulo">
+          <h1 className="text">Cadastre-se</h1>
+        </div>
+
+        <form onSubmit={enviarUsuario}>
+          <div className="mb-1">
+            <label htmlFor="nome" className="form-label">
+              Nome de usuário:
+            </label>
+            <input
+              id="nome"
+              type="text"
+              placeholder="Nome de usuário..."
+              className="form"
+              value={nome}
+              onChange={(e) => setNome(e.target.value)}
+              required
+            />
+          </div>
+
+          <div className="mb-1">
+            <label htmlFor="email" className="form-label">
+              Email:
+            </label>
+            <input
+              id="email"
+              type="email"
+              placeholder="nome@gmail.com"
+              className="form"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+
+          <div className="mb-2">
+            <label htmlFor="senha" className="form-label">
+              Senha:
+            </label>
+            <input
+              id="senha"
+              type="password"
+              placeholder="Digite a senha..."
+              className="form"
+              value={senha}
+              onChange={(e) => setSenha(e.target.value)}
+              required
+            />
+          </div>
+
+          <div className="mb-2">
+            <label htmlFor="confirmarSenha" className="form-label">
+              Confirmar senha:
+            </label>
+            <input
+              id="confirmarSenha"
+              type="password"
+              placeholder="Confirme a senha..."
+              className="form"
+              value={confirmarSenha}
+              onChange={(e) => setConfirmarSenha(e.target.value)}
+              required
+            />
+          </div>
+
+          {erro && <p className="erro">{erro}</p>}
+          {sucesso && <p className="sucesso">{sucesso}</p>}
+
+          <div className="sla">
+            <div className="Login-Cadast">
+              <a href="/login" id="C-text">Login</a>
             </div>
-        </>
 
-    )
+            <div className="col-auto">
+              {/* Removido onclick inline e href inválido */}
+              <button type="submit" className="btn-cadast">
+                Cadastrar-se
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </>
+  );
 }
 
-export default cadastro;
+export default Cadastro;
