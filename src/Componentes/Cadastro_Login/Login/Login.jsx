@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { useNavigate, Link } from 'react-router-dom';
+import { AuthContext } from '../../Inicio/Header/AuthContext';
 import "./login.css";
 
 const API_LOGIN = "http://localhost:3000/api/clients/login";
@@ -9,6 +10,8 @@ function Login() {
     const [identifier, setIdentifier] = useState(""); // email or username
     const [senha, setSenha] = useState("");
     const [erro, setErro] = useState("");
+
+    const { login } = useContext(AuthContext);
 
     const enviarLogin = async (e) => {
         e.preventDefault();
@@ -40,8 +43,8 @@ function Login() {
                 throw new Error(data.error || 'Erro ao autenticar.');
             }
 
-            // Salva usuário no localStorage (apenas id/name/email)
-            localStorage.setItem('user', JSON.stringify(data));
+            // Atualiza o contexto de autenticação (salva em localStorage)
+            if (login) login(data);
 
             // navega para rota principal
             navigate('/');

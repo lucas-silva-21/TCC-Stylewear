@@ -7,28 +7,33 @@ export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    // Ao carregar a aplicação, verifica se há um token/perfil armazenado
-    const storedToken = localStorage.getItem('userToken');
-    const storedProfile = localStorage.getItem('userProfile');
+    // Ao carregar a aplicação, verifica se há um perfil de usuário armazenado
+    const storedUser = localStorage.getItem('user');
 
-    if (storedToken && storedProfile) {
-      // Opcional: validar o token no backend para garantir que ainda é válido
-      setUser(JSON.parse(storedProfile));
+    if (storedUser) {
+      try {
+        setUser(JSON.parse(storedUser));
+      } catch (err) {
+        console.error('Erro ao parsear user do localStorage', err);
+        localStorage.removeItem('user');
+      }
     }
   }, []);
 
   const login = (userData) => {
     setUser(userData);
-    // Armazenar token e perfil no localStorage aqui
+    try {
+      localStorage.setItem('user', JSON.stringify(userData));
+    } catch (err) {
+      console.error('Erro ao salvar user no localStorage', err);
+    }
   };
 
   const logout = () => {
     setUser(null);
-    localStorage.removeItem('userToken');
-    localStorage.removeItem('userProfile');
+    localStorage.removeItem('user');
   };
 
-  // O estado isLoggedIn pode ser derivado do estado 'user'
   const isLoggedIn = !!user;
 
   return (
