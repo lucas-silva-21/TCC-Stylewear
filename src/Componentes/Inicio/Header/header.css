@@ -63,6 +63,7 @@ header {
             color: white;
             text-decoration: none;
             cursor: pointer;
+            border-bottom: solid 2px rgba(255, 255, 255, 0.489);
         }
         #t_usuario:hover{
             transition: 0.5s;

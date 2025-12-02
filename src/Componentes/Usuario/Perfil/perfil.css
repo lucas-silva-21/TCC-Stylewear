@@ -1,23 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Allan:wght@400;700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Koulen&family=Krona+One&display=swap');
 
-.section-perfil{
+.section-perfil {
     overflow: hidden;
 
-
-    .div-part1{
+    .div-part1 {
         display: grid;
         grid-template-columns: 130px 10fr 1fr;
         grid-template-rows: auto;
         margin-left: 2%;
         gap: 5%;
 
-        #avatar{
+        #avatar {
             max-height: 100px;
             width: auto;
             object-fit: cover;
         }
 
-        #H-text{
+        #H-text {
             font-family: 'Inter', sans-serif;
             align-self: flex-end;
             justify-self: start;
@@ -25,7 +24,7 @@
             margin-bottom: 30px;
         }
 
-        #button-text{
+        #button-text {
             transition: 0.5s;
             font-family: 'Inter', sans-serif;
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -37,11 +36,62 @@
             width: 80px;
             cursor: pointer;
         }
-        #button-text:hover{
+
+        #button-text:hover {
             transition: 0.5s;
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             background-color: rgb(255, 220, 220);
             color: rgb(255, 65, 65);
         }
+    }
+
+    .div-info {
+        background-color: #f2f8ff;
+        border-radius: 20px;
+        padding: 20px;
+
+        .div-mail {
+            font-size: 10px;
+            font-family: 'Krona One', sans-serif;
+
+            h1 {
+                margin-bottom: 15px;
+            }
+
+            #H-text {
+                margin-top: 10px;
+                border-radius: 20px;
+                padding: 5px;
+                background-color: #d7dfe8;
+            }
+        }
+
+        .div-senha {
+            margin-top: 20px;
+            font-size: 10px;
+            font-family: 'Krona One', sans-serif;
+
+            h1 {
+                margin-bottom: 15px;
+            }
+
+            #H-text {
+                margin-top: 10px;
+                border-radius: 20px;
+                padding: 5px;
+                background-color: #d7dfe8;
+            }
+        }
+    }
+
+    #button-text {
+        transition: 0.5s;
+        margin-top: 20px;
+        padding: 15px;
+        font-family: 'Krona One', 'sans-serif';
+    }
+    #button-text:hover {
+        transition: 0.5s;
+        color: rgb(56, 42, 255);
     }
 }
