@@ -1,0 +1,110 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Koulen&family=Krona+One&display=swap');
+
+header {
+    overflow: hidden;
+
+    .part1 {
+        background-color: #322388;
+        margin: 0;
+        width: 100%;
+        padding: 10px;
+        display: grid;
+        grid-template-columns: 13fr 10fr 10fr 5px 1fr 0fr 1fr 1fr;
+        grid-template-rows: 10fr;
+
+        #logo {
+            width: auto;
+            height: 50px;
+            align-self: center;
+        }
+
+        .Busca {
+            color: black;
+            padding: 10px;
+            border-radius: 15px;
+            width: 450px;
+            margin-top: 5px;
+            border: none;
+            align-self: center;
+        }
+
+        #H-text {
+            color: white;
+            text-decoration: none;
+            font-family: "Inter", sans-serif;
+            text-align: end;
+            align-self: center;
+            margin-right: 10px;
+        }
+        
+        h2{
+            color: white;
+            margin-top: 8px;
+        }
+
+        a{
+            align-self: center;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        #cabide{
+            text-align: end; 
+
+            #cabide-img{
+                width: auto;
+                height: 20px;
+                margin-right: 2%;
+            }
+        }
+
+    }
+
+    .part2 {
+        background-color: #d2d2d2;
+        margin: 0;
+        padding: 15px;
+        width: 100%;
+        height: 40px;
+
+        ul {
+            display: flex;
+            list-style: none;
+            justify-content: space-between;
+            margin: 0px 230px 0px 230px;
+            
+            img {
+                width: auto;
+                height: 35px;
+
+            }
+
+            #tt_dest1{
+                border-bottom: solid 1.5px black;
+                padding-bottom: 15%;
+            }
+
+            #tt_dest2{
+                border-bottom: solid 2px black;
+                padding-bottom: 15%;
+            }
+
+            #tt_dest3{
+                border-bottom: solid 2px black;
+                padding-bottom: 15%;
+            }
+
+            #tt_dest4{
+                border-bottom: solid 2px black;
+                padding-bottom: 15%;
+            }
+
+            #tt_dest5{
+                border-bottom: solid 2px black;
+                padding-bottom: 15%;
+            }
+        }
+
+    }
+}
+

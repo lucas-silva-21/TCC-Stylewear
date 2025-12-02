@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Koulen&family=Krona+One&display=swap');
+
+.container_login {
+    width: 50%;
+    color: #000000;
+    background-color: #ffffff;
+    justify-self: center;
+    align-self: center;
+    align-items: center;
+    border-radius: 7px;
+
+    margin-top: 5%;
+
+    .Titulo {
+        padding: 20px;
+
+        .text {
+            font-family: 'Koulen', sans-serif;
+            font-weight: 600;
+            justify-self: center;
+        }
+    }
+
+    .mb-1 {
+        display: flex;
+        flex-direction: column;
+        padding: 1%;
+        align-items: center;
+
+        .form-label {
+            font-family: 'Figma Sans', sans-serif;
+            font-weight: bold;
+            align-self: flex-start;
+            margin-left: 24%;
+
+        }
+
+        .form {
+            width: 50%;
+            padding: 6px;
+            border-radius: 7px;
+            border: none;
+            outline: 0;
+            background-color: rgb(233, 237, 242)
+        }
+    }
+
+    .mb-2 {
+        display: flex;
+        flex-direction: column;
+        padding: 1%;
+        align-items: center;
+
+        .form-label {
+            font-family: 'Figma Sans', sans-serif;
+            font-weight: bold;
+            align-self: flex-start;
+            margin-left: 24%;
+        }
+
+        .form {
+            width: 50%;
+            padding: 6px;
+            border-radius: 7px;
+            border: none;
+            outline: 0;
+            background-color: rgb(233, 237, 242)
+        }
+
+        .form-text {
+            width: 70%;
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            color: rgb(160, 9, 9);
+        }
+    }
+
+    .sla {
+        display: flex;
+        justify-items: center;
+        justify-content: center;
+
+        #C-text {
+            align-self: center;
+            font-family: 'Figma Sans', sans-serif;
+            padding: 0px 10px 0px 10px;
+            color: rgb(56, 42, 255);
+            text-decoration: none;
+            margin-bottom: 2%;
+            font-weight: bold;
+        }
+    }
+
+    .col-auto {
+        justify-self: center;
+        margin-top: 15px;
+
+        .btn-entrar {
+            width: 150px;
+            background-color: #236b88;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            font-family: 'Koulen', sans-serif;
+
+
+        }
+
+        .btn-entrar:hover {
+            transition: 1s;
+            background-color: #006992d0;
+        }
+    }
+
+    .esqueci {
+        display: flex;
+        margin-left: 15%;
+
+        #C-text {
+            color: rgb(12, 0, 181);
+            text-decoration: none;
+            margin-left: 12%;
+            margin-bottom: 5%;
+            margin-top: 1%;
+            font-weight: 500;
+
+        }
+
+        #C-text:hover {
+            color: #8f2614d0;
+            transition: 0.5s;
+        }
+    }
+}

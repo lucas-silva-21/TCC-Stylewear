@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Koulen&family=Krona+One&display=swap');
+
+.div_ms {
+    margin: 4%;
+    overflow: hidden;
+
+    #text_ms {
+        font-family: 'Krona One', sans-serif;
+        color: #484848;
+        margin-bottom: 4%;
+        justify-self: center;
+    }
+
+    .ul_ms {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        gap: 5%;
+        flex-wrap: wrap;
+
+        #bolha_ms {
+            background-color: rgba(245, 245, 245, 0.99);
+            border-radius: 20%;
+            padding: 1%;
+            object-fit: cover;
+            margin-top: 20px;
+        }
+
+        #img_ms {
+            height: 60px;
+            width: auto;
+            object-fit: cover;
+        }
+    }
+}

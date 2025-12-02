@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Koulen&family=Krona+One&display=swap');
+
+.painel{
+    display: grid;
+    grid-template-columns: 10fr 1fr 10fr;
+    grid-template-rows: 1fr;
+    background-color: black;
+    overflow: hidden;
+
+    #painel_marca{
+        justify-content: center;
+        height: 150px;
+        width: auto;
+    }
+}
+
+.div-logo{
+    justify-self: center;
+    padding: 20px 40px 40px 40px;
+
+    #img_log{
+    height: 65px;
+    width: auto;
+    justify-self: center;
+    align-self: center;
+}}

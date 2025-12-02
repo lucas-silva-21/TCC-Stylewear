@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Koulen&family=Krona+One&display=swap');
+
+.caroseul-seleção {
+    margin: 2%;
+
+    #titulo {
+        font-family: 'Krona One', sans-serif;
+        font-size: larger;
+        margin-left: 20px;
+    }
+
+    .caroseul {
+        display: flex;
+        scroll-behavior: smooth;
+        padding: 20px 0;
+        justify-content: space-between;
+        overflow: hidden;
+        width: 100%;
+
+        .carousel2 {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            width: 850px;
+            gap: 20px;
+            flex-shrink: 0;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            transition: transform 0.3s;
+            overflow: hidden;
+        }
+
+        .div-card {
+            position: relative;
+            background-color: rgb(235 235 235);
+            padding: 2px;
+            border-radius: 7px;
+            object-fit: cover;
+
+            .form-check{
+                text-align: start;
+            }
+
+            #img-item {
+                height: 120px;
+                width: auto;
+                border-radius: 5px;
+                object-fit: cover;
+                display: block;
+            }
+        }
+
+        #left {
+            background-color: #eeee;
+            align-self: center;
+            height: 36px;
+            width: 36px;
+            border-radius: 50%;
+            font-size: 20px;
+            border: none;
+        }
+
+        #left:active {
+            background-color: #cdcdcdee;
+        }
+
+        #left:hover {
+            transition: 1s;
+            cursor: pointer;
+            background-color: #cdcdcdee;
+        }
+
+        .div-itens {
+            width: 80%;
+            overflow: hidden;
+        }
+
+        .ul-itens {
+            display: flex;
+            list-style: none;
+            gap: 5%;
+            width: 75%;
+            overflow: hidden;
+        }
+
+        #right {
+            background-color: #eeee;
+            align-self: center;
+            height: 36px;
+            width: 36px;
+            border-radius: 50%;
+            font-size: 20px;
+            border: none;
+        }
+
+        #right:active {
+            background-color: #cdcdcdee;
+        }
+
+        #right:hover {
+            transition: 1s;
+            cursor: pointer;
+            background-color: #cdcdcdee;
+        }
+    }
+}

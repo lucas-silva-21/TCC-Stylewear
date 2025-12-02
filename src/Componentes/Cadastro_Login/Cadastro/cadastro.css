@@ -1,0 +1,125 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Koulen&family=Krona+One&display=swap');
+
+.container_cadast {
+    width: 50%;
+    color: #000000;
+    background-color: #ffffff;
+    justify-self: center;
+    align-self: center;
+    align-items: center;
+    border-radius: 7px;
+
+    margin-top: 6%;
+
+    .Titulo {
+        padding: 20px;
+
+        .text {
+            font-family: 'Krona One', sans-serif;
+            font-weight: 600;
+            justify-self: center;
+        }
+
+    }
+
+    .mb-1 {
+        display: flex;
+        padding: 1%;
+        flex-direction: column;
+        align-items: center;
+
+        .form-label {
+            font-family: Figma Sans, sans-serif;
+            font-weight: bold;
+            align-self: flex-start;
+            margin-left: 24%;
+
+
+        }
+
+        .form {
+            width: 50%;
+            padding: 6px;
+            border-radius: 7px;
+            border: none;
+            outline: 0;
+            background-color: rgb(233, 237, 242)
+        }
+    }
+
+    .mb-2 {
+        height: 50px;
+        display: flex;
+        flex-direction: column;
+        padding: 1%;
+        align-items: center;
+        overflow: hidden;
+
+        .form-label {
+            font-family: Figma Sans, sans-serif;
+            font-weight: bold;
+            align-self: flex-start;
+            margin-left: 24%;
+        }
+
+        .form {
+            width: 50%;
+            padding: 6px;
+            border-radius: 7px;
+            border: none;
+            outline: 0;
+            background-color: rgb(233, 237, 242)
+        }
+
+        .form-text {
+            width: 50%;
+            padding: 10px;
+            border-radius: 10px;
+            border: none;
+            color: rgb(160, 9, 9);
+        }
+
+    }
+
+    .mb-2:hover {
+        transition: 10s;
+        height: auto;
+    }
+
+    .sla {
+        display: flex;
+        justify-items: center;
+        justify-content: center;
+
+        #C-text {
+            align-self: center;
+            font-family: 'Koulen', sans-serif;
+            padding: 0px 10px 0px 10px;
+            color: rgb(56, 42, 255);
+            text-decoration: none;
+        }
+    }
+
+    .col-auto {
+        justify-self: center;
+        margin-top: 15px;
+
+        .btn-cadast {
+            width: 150px;
+            background-color: #236b88;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 10px;
+            font-family: 'Koulen', sans-serif;
+
+        }
+
+        .btn-cadast:hover {
+            transition: 1s;
+            background-color: #006992d0;
+
+        }
+    }
+
+}
