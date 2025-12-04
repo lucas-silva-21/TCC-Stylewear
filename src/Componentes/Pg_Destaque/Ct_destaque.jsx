@@ -121,7 +121,8 @@ function Conjunto({ estilo = 'OldMoney', images = {} }) {
             </ul>
           </div>
 
-          <div style={{ background:'#751e8b', height:'30px', minWidth:'259%', borderRadius:'0px 0px 10px 10px', border:'1.5px solid black', borderTop: '0px', marginLeft:'-1px' }} />
+          {/* <div id='dd' style={{ background:'#481e8b', height:'30px', minWidth:'259%', borderRadius:'0px 0px 10px 10px', border:'1.5px solid black', borderTop: '0px', marginLeft:'-1px' }} /> */}
+          <div id='dd'></div>
         </section>
       </div>
     </>

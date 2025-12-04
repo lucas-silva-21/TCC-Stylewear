@@ -27,8 +27,10 @@ function Menu(props) {
                         </>
                     ) : (
                         <>
-                            <a href="/Armario" id="cabide"><img src="/cabide.png" alt="cabide" id="cabide-img" /></a>
-                            <h2>|</h2>
+                            {/* <a href="/Armario" id="cabide"><img src="/cabide.png" alt="cabide" id="cabide-img" /></a> */}
+                            <span></span>
+                            {/* <h2>|</h2> */}
+                            <span></span>
                             <a href="/Login" id="H-text">Entrar</a>
                             <h2>|</h2>
                             <a href="/Cadastro" id="H-text">Cadastro</a>

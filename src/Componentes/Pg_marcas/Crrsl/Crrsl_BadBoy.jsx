@@ -53,21 +53,21 @@ function Carousel(props) {
   return (
     <>
       <div className='caroseul-seleção'>
-        <h1 id='titulo'>{tituloTenis}</h1>
+        <h1 id='titulo'>{tituloCamiseta}</h1>
         <div className='caroseul'>
-          <button onClick={() => scroll(carouselRefTenis, 'left')} id='left'>&#8249;</button>
+          <button onClick={() => scroll(carouselRefCamiseta, 'left')} id='left'>&#8249;</button>
 
-          <div className="carousel2" ref={carouselRefTenis}>
-            {itemsTenis.map((list, index) => (
+          <div className="carousel2" ref={carouselRefCamiseta}>
+            {itemsCamiseta.map((list, index) => (
               <div className='div-card' key={index}>
                 <div className="form-check hanger">
                   <input
                     className="hanger-checkbox"
                     type="checkbox"
-                    id={`hanger-tenis-${index}`}
-                    aria-label={`Selecionar tenis ${index + 1}`}
+                    id={`hanger-camiseta-${index}`}
+                    aria-label={`Selecionar camiseta ${index + 1}`}
                   />
-                  <label className="hanger-label" htmlFor={`hanger-tenis-${index}`}>
+                  <label className="hanger-label" htmlFor={`hanger-camiseta-${index}`}>
                     <img src="/cabide.png" alt="cabide" className="hanger-icon-outline" />
                   </label>
                 </div>
@@ -76,7 +76,7 @@ function Carousel(props) {
             ))}
           </div>
 
-          <button onClick={() => scroll(carouselRefTenis, 'right')} id='right'>&#8250;</button>
+          <button onClick={() => scroll(carouselRefCamiseta, 'right')} id='right'>&#8250;</button>
         </div>
       </div>
 
@@ -109,62 +109,6 @@ function Carousel(props) {
       </div>
 
       <div className='caroseul-seleção'>
-        <h1 id='titulo'>{tituloCamiseta}</h1>
-        <div className='caroseul'>
-          <button onClick={() => scroll(carouselRefCamiseta, 'left')} id='left'>&#8249;</button>
-
-          <div className="carousel2" ref={carouselRefCamiseta}>
-            {itemsCamiseta.map((list, index) => (
-              <div className='div-card' key={index}>
-                <div className="form-check hanger">
-                  <input
-                    className="hanger-checkbox"
-                    type="checkbox"
-                    id={`hanger-camiseta-${index}`}
-                    aria-label={`Selecionar camiseta ${index + 1}`}
-                  />
-                  <label className="hanger-label" htmlFor={`hanger-camiseta-${index}`}>
-                    <img src="/cabide.png" alt="cabide" className="hanger-icon-outline" />
-                  </label>
-                </div>
-                <img src={list.img} alt={list.alt} id='img-item' />
-              </div>
-            ))}
-          </div>
-
-          <button onClick={() => scroll(carouselRefCamiseta, 'right')} id='right'>&#8250;</button>
-        </div>
-      </div>
-
-      <div className='caroseul-seleção'>
-        <h1 id='titulo'>{tituloBlusa}</h1>
-        <div className='caroseul'>
-          <button onClick={() => scroll(carouselRefBlusa, 'left')} id='left'>&#8249;</button>
-
-          <div className="carousel2" ref={carouselRefBlusa}>
-            {itemsBlusa.map((list, index) => (
-              <div className='div-card' key={index}>
-                <div className="form-check hanger">
-                  <input
-                    className="hanger-checkbox"
-                    type="checkbox"
-                    id={`hanger-blusa-${index}`}
-                    aria-label={`Selecionar blusa ${index + 1}`}
-                  />
-                  <label className="hanger-label" htmlFor={`hanger-blusa-${index}`}>
-                    <img src="/cabide.png" alt="cabide" className="hanger-icon-outline" />
-                  </label>
-                </div>
-                <img src={list.img} alt={list.alt} id='img-item' />
-              </div>
-            ))}
-          </div>
-
-          <button onClick={() => scroll(carouselRefBlusa, 'right')} id='right'>&#8250;</button>
-        </div>
-      </div>
-
-      <div className='caroseul-seleção'>
         <h1 id='titulo'>{tituloCalça}</h1>
         <div className='caroseul'>
           <button onClick={() => scroll(carouselRefCalça, 'left')} id='left'>&#8249;</button>
@@ -191,23 +135,23 @@ function Carousel(props) {
           <button onClick={() => scroll(carouselRefCalça, 'right')} id='right'>&#8250;</button>
         </div>
       </div>
-
+      
       <div className='caroseul-seleção'>
-        <h1 id='titulo'>{tituloBone}</h1>
+        <h1 id='titulo'>{tituloTenis}</h1>
         <div className='caroseul'>
-          <button onClick={() => scroll(carouselRefBone, 'left')} id='left'>&#8249;</button>
+          <button onClick={() => scroll(carouselRefTenis, 'left')} id='left'>&#8249;</button>
 
-          <div className="carousel2" ref={carouselRefBone}>
-            {itemsBone.map((list, index) => (
+          <div className="carousel2" ref={carouselRefTenis}>
+            {itemsTenis.map((list, index) => (
               <div className='div-card' key={index}>
                 <div className="form-check hanger">
                   <input
                     className="hanger-checkbox"
                     type="checkbox"
-                    id={`hanger-bone-${index}`}
-                    aria-label={`Selecionar bone ${index + 1}`}
+                    id={`hanger-tenis-${index}`}
+                    aria-label={`Selecionar tenis ${index + 1}`}
                   />
-                  <label className="hanger-label" htmlFor={`hanger-bone-${index}`}>
+                  <label className="hanger-label" htmlFor={`hanger-tenis-${index}`}>
                     <img src="/cabide.png" alt="cabide" className="hanger-icon-outline" />
                   </label>
                 </div>
@@ -216,10 +160,9 @@ function Carousel(props) {
             ))}
           </div>
 
-          <button onClick={() => scroll(carouselRefBone, 'right')} id='right'>&#8250;</button>
+          <button onClick={() => scroll(carouselRefTenis, 'right')} id='right'>&#8250;</button>
         </div>
       </div>
-
     </>
   )
 }

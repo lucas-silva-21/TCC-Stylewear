@@ -1,4 +1,5 @@
 import React , { useState } from 'react';
+import './index.css';
 
 import Header from './Componentes/Inicio/Header/Header';
 import Destaques from './Componentes/Inicio/Destaques/Destaques';
