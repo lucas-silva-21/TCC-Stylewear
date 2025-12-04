@@ -1,7 +1,7 @@
 import React from 'react';
 import './itens.css';
 
-function Cards({ images = ['/Categoria/Blusa_categ.png',
+function Cards({ images = [
   '/Fotos - TCC (adidas/m1.png',
   '/Fotos - TCC (adidas/m2.png',
   '/Fotos - TCC (adidas/m3.png',

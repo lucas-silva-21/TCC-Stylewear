@@ -1,6 +1,6 @@
 import './itens.css'
 
-function Cards({ images = ['/Categoria/Calça_categ.png',
+function Cards({ images = [
   '/Fotos - TCC (adidas/c 1.png',
   '/Fotos - TCC (adidas/c 2.png',
   '/Fotos - TCC (adidas/c 3.png',

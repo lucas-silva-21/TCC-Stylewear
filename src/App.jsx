@@ -212,7 +212,7 @@ function App() {
             </>
           } />
         <Route
-          path='/Categoria+Parte_superior'
+          path='/Categoria+Camiseta'
           element={
             <>
               <Header />

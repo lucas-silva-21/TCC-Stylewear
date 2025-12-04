@@ -9,7 +9,7 @@ function Conjunto({ estilo = 'OldMoney', images = {} }) {
     blusa: '/Outfit/outfit-oldmoney-blusa.png',
     calca: '/Outfit/outfit-oldmoney-calça.png',
     tenis: '/Outfit/outfit-oldmoney-tenis.png',
-    desc_bone: 'Boné Six Panel Creative Minds Verde',
+    desc_bone: 'Boné',
     desc_blusa: 'Blusa',
     desc_calca: 'Calça',
     desc_tenis: 'Tênis'
@@ -21,7 +21,7 @@ function Conjunto({ estilo = 'OldMoney', images = {} }) {
     blusa: '/Outfit/outfit-sportlife-blusa.png',
     calca: '/Outfit/outfit-sportlife-calça.png',
     tenis: '/Outfit/outfit-sportlife-tenis.png',
-    desc_bone: 'Nenhum Boné',
+    desc_bone: 'Boné',
     desc_blusa: 'Blusa',
     desc_calca: 'Calça',
     desc_tenis: 'Tênis'
@@ -33,7 +33,7 @@ function Conjunto({ estilo = 'OldMoney', images = {} }) {
     blusa: '/Outfit/outfit-sportwear-blusa.png',
     calca: '/Outfit/outfit-sportwear-calça.png',
     tenis: '/Outfit/outfit-sportwear-tenis.png',
-    desc_bone: 'Nenhum Boné',
+    desc_bone: 'Boné',
     desc_blusa: 'Blusa',
     desc_calca: 'Calça',
     desc_tenis: 'Tênis'
@@ -57,7 +57,7 @@ function Conjunto({ estilo = 'OldMoney', images = {} }) {
     blusa: '/Outfit/outfit-streetwear-blusa.png',
     calca: '/Outfit/outfit-streetwear-calça.png',
     tenis: '/Outfit/outfit-streetwear-tenis.png',
-    desc_bone: 'Nenhum Boné',
+    desc_bone: 'Boné',
     desc_blusa: 'Blusa',
     desc_calca: 'Calça',
     desc_tenis: 'Tênis'
