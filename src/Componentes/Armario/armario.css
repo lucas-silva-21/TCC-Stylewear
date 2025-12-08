@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Koulen&family=Krona+One&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Koulen&family=Krona+One&display=swap');
 
 .caroseul-bone {
     display: flex;
@@ -345,4 +345,123 @@
         cursor: pointer;
         background-color: #cdcdcdee;
     }
+} */
+
+
+ /* ===========================
+   CONTAINER PRINCIPAL
+   =========================== */
+
+.armario-container {
+  width: 100%;
+  padding: 50px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 70px;
+  user-select: none;
+}
+
+
+/* ===========================
+   GRID CENTRAL (casaco/shorts/camiseta)
+   =========================== */
+
+.armario-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  gap: 260px;
+}
+
+
+/* ===========================
+   CAIXA DA IMAGEM
+   =========================== */
+
+.armario-item {
+  width: 160px;
+  height: 160px;
+  background: #e7e7e7;
+  border-radius: 20px;
+  padding: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.12);
+}
+
+.armario-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+
+/* ===========================
+   CONTROLE DE SETAS
+   =========================== */
+
+.seta-container {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.seta {
+  cursor: pointer;
+  font-size: 28px;
+  padding: 4px 10px;
+  border-radius: 8px;
+  transition: 0.2s ease;
+}
+
+.seta:hover {
+  background-color: #d5d5d5;
+}
+
+
+/* ===========================
+   LABEL DO ITEM
+   =========================== */
+
+.armario-label {
+  margin-top: 6px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+  text-align: center;
+}
+
+
+/* ===========================
+   RESPONSIVIDADE
+   =========================== */
+
+@media (max-width: 900px) {
+  .armario-grid {
+    gap: 50px;
+  }
+}
+
+@media (max-width: 700px) {
+  .armario-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .armario-container {
+    gap: 50px;
+  }
+
+  .armario-item {
+    width: 140px;
+    height: 140px;
+  }
+
+  .seta {
+    font-size: 24px;
+  }
 }
