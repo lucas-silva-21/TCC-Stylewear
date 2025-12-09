@@ -156,6 +156,45 @@ export default function Armario() {
     }));
   };
 
+  const removeItem = (categoria) => {
+    try {
+      const currIndex = index[categoria] || 0;
+      const list = Array.isArray(pecas[categoria]) ? pecas[categoria] : [];
+      if (list.length === 0) return;
+      const url = list[currIndex];
+      // Do not remove the placeholder
+      if (!url || url === '/Bloqueio.png') return;
+
+      // Ask for confirmation
+      const confirmMsg = `Remover este item de ${categoria}?`;
+      if (!window.confirm(confirmMsg)) return;
+
+      // Build new list without the removed URL
+      const newList = list.filter((u, i) => i !== currIndex && u !== url);
+      // Ensure placeholder present
+      if (!newList.includes('/Bloqueio.png')) newList.unshift('/Bloqueio.png');
+
+      const newPecas = { ...pecas, [categoria]: Array.from(new Set(newList)) };
+      setPecas(newPecas);
+
+      // Adjust index to valid value
+      setIndex((prev) => ({
+        ...prev,
+        [categoria]: newPecas[categoria].length > 0 ? (prev[categoria] % newPecas[categoria].length) : 0,
+      }));
+
+      // Update stored armarioAdded for the current user
+      try {
+        const raw = readStorageKey('armarioAdded');
+        const saved = raw ? JSON.parse(raw) : {};
+        if (Array.isArray(saved[categoria])) {
+          saved[categoria] = saved[categoria].filter(u => u !== url);
+        }
+        writeStorageKey('armarioAdded', JSON.stringify(saved));
+      } catch (e) { /* ignore storage errors */ }
+    } catch (e) { /* ignore */ }
+  };
+
   const renderItem = (categoria, label) => (
     <div className="armario-item-block" style={{display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '8px'}}>
       <div className="seta-container">
@@ -166,11 +205,22 @@ export default function Armario() {
             src={pecas[categoria][index[categoria]]}
             alt={label}
           />
+          <button
+            type="button"
+            className="armario-remove-button hanger-label"
+            onClick={() => removeItem(categoria)}
+            title="Remover item do armário"
+            aria-label={`Remover item de ${label}`}
+          >
+            <img src="/lixeira.png" alt="lixeira" className="hanger-icon-outline" />
+          </button>
         </div>
 
         <button className="seta" onClick={() => mudarImg(categoria, "dir")}>⏵</button>
       </div>
-      <span className="armario-label">{label}</span>
+      <div style={{display: 'flex', alignItems: 'center', gap: '8px'}}>
+        <span className="armario-label">{label}</span>
+      </div>
     </div>
   );
 
