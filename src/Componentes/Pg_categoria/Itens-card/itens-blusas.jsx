@@ -198,7 +198,10 @@ export default function Cards({ images = [
               checked={!!selected[list.img]}
               onChange={() => toggleSelect(index)}
             />
-            <label className="hanger-label" htmlFor={`hanger-blusa-${index}`}>
+            <label 
+              className={`hanger-label ${selected[list.img] ? 'checked' : ''}`} 
+              htmlFor={`hanger-blusa-${index}`}
+            >
               <img src="/cabide.png" alt="cabide" className="hanger-icon-outline" />
             </label>
           </div>

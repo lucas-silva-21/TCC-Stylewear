@@ -56,14 +56,70 @@ function Cards({ images = ['/Categoria/Acessorio_categ.png'], count }) {
     } catch (e) {}
   }, [selected, user]);
 
+  // Listen for armario updates to reset checkboxes when items are removed
+  useEffect(() => {
+    if (!user) return;
+
+    const handleArmarioUpdate = () => {
+      try {
+        const raw = readStorageKey(storageKey) || localStorage.getItem(storageKey);
+        if (raw) {
+          const arr = JSON.parse(raw);
+          const obj = {};
+          Array.isArray(arr) && arr.forEach(u => { obj[u] = true; });
+          setSelected(obj);
+        } else {
+          setSelected({});
+        }
+      } catch (e) {
+        console.warn('Error updating selected state', e);
+      }
+    };
+
+    window.addEventListener('armarioUpdated', handleArmarioUpdate);
+    
+    // Also listen for storage changes (for cross-tab updates)
+    const handleStorageChange = (e) => {
+      if (e.key && (e.key === storageKey || e.key.startsWith(`${storageKey}_`))) {
+        handleArmarioUpdate();
+      }
+    };
+    window.addEventListener('storage', handleStorageChange);
+
+    return () => {
+      window.removeEventListener('armarioUpdated', handleArmarioUpdate);
+      window.removeEventListener('storage', handleStorageChange);
+    };
+  }, [user]);
+
   const toggleSelect = (idx) => {
     const url = item_Short[idx] && item_Short[idx].img;
     if (!url) return;
+    const wasSelected = !!selected[url];
     setSelected(prev => {
       const next = { ...prev };
       if (next[url]) delete next[url]; else next[url] = true;
       return next;
     });
+
+    // Sync to armarioAdded
+    if (user) {
+      try {
+        const k = getUserKey();
+        if (!k) return;
+        const armarioKey = `armarioAdded_${k}`;
+        const raw = localStorage.getItem(armarioKey) || localStorage.getItem('armarioAdded');
+        const armario = raw ? JSON.parse(raw) : {};
+        // Acessórios podem não ter uma categoria específica no armário, mas vamos adicionar suporte
+        // Se não houver categoria de acessórios, podemos pular ou criar uma
+        // Por enquanto, vamos apenas sincronizar o evento
+        localStorage.setItem(armarioKey, JSON.stringify(armario));
+        // Dispatch custom event to notify Armario component
+        window.dispatchEvent(new Event('armarioUpdated'));
+      } catch (e) {
+        console.warn('sync armarioAdded', e);
+      }
+    }
   }
 
   return (
@@ -72,7 +128,7 @@ function Cards({ images = ['/Categoria/Acessorio_categ.png'], count }) {
         <div className='div-card2' key={index}>
           <img src={list.img} alt={list.alt} id='img-item2' />
           <div className="form-check hanger">
-              <input
+            <input
               className="hanger-checkbox"
               type="checkbox"
               id={`hanger-acessorio-${index}`}
@@ -80,7 +136,10 @@ function Cards({ images = ['/Categoria/Acessorio_categ.png'], count }) {
               checked={!!selected[list.img]}
               onChange={() => toggleSelect(index)}
             />
-            <label className="hanger-label" htmlFor={`hanger-acessorio-${index}`}>
+            <label 
+              className={`hanger-label ${selected[list.img] ? 'checked' : ''}`} 
+              htmlFor={`hanger-acessorio-${index}`}
+            >
               <img src="/cabide.png" alt="cabide" className="hanger-icon-outline" />
             </label>
           </div>

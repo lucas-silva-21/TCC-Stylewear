@@ -61,14 +61,11 @@
   margin-right: 8px;
 }
 .hanger-label svg { width: 18px; height: 18px; display: block; }
-.hanger-checkbox:checked + .hanger-label {
-  /* Alterado para amarelo translúcido */
-  background-color: rgba(0, 0, 0, 0.16);
-}
 .hanger-icon-outline{
     width: 30px;
     height: 20px;
     filter: invert(34%) sepia(8%) saturate(747%) hue-rotate(190deg) brightness(91%) contrast(86%);
+    transition: filter 0.12s ease;
 }
 
 /* posicionar o hanger sobre a imagem */
@@ -113,10 +110,20 @@
   height: 18px !important;
   object-fit: contain;
   display: block;
-  filter: none; /* ou mantenha filtro se quiser cor */
+  transition: filter 0.12s ease;
 }
 
-/* estado checked */
-.hanger-checkbox:checked + .hanger-label {
-  background-color: #002EAD;
+/* estado checked - aumentar especificidade */
+.hanger-checkbox:checked + .hanger-label,
+.form-check.hanger .hanger-checkbox:checked + .hanger-label,
+.div-card2 .hanger-checkbox:checked + .hanger-label,
+.hanger-label.checked {
+  background-color: #002EAD !important;
+}
+
+.hanger-checkbox:checked + .hanger-label .hanger-icon-outline,
+.form-check.hanger .hanger-checkbox:checked + .hanger-label .hanger-icon-outline,
+.div-card2 .hanger-checkbox:checked + .hanger-label .hanger-icon-outline,
+.hanger-label.checked .hanger-icon-outline {
+  filter: brightness(0) invert(1) !important; /* Muda o ícone para branco quando selecionado */
 }

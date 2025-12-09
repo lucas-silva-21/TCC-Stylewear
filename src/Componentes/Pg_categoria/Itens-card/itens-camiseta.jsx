@@ -222,7 +222,10 @@ function Cards({ images = [
               checked={!!selected[list.img]}
               onChange={() => toggleSelect(index)}
             />
-            <label className="hanger-label" htmlFor={`hanger-camiseta-${index}`}>
+            <label 
+              className={`hanger-label ${selected[list.img] ? 'checked' : ''}`} 
+              htmlFor={`hanger-camiseta-${index}`}
+            >
               <img src="/cabide.png" alt="cabide" className="hanger-icon-outline" />
             </label>
           </div>
