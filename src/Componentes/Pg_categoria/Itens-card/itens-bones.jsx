@@ -66,40 +66,52 @@ function Cards({ images = [
     alt: `Item ${i + 1}`
   }));
 
-  // Persist selected items (indices) for this cards list in localStorage
   const storageKey = 'selectedItems_bone';
   const { user } = useContext(AuthContext);
-  const getUserKey = () => (user ? user.id || user.email || user.name || 'user' : 'guest');
+  const getUserKey = () => (user ? user.id || user.email || user.name || 'user' : null);
   const readStorageKey = (key) => {
-    try { const byUser = localStorage.getItem(`${key}_${getUserKey()}`); if (byUser) return byUser; } catch (e) {}
-    return localStorage.getItem(key);
-  };
-  const writeStorageKey = (key, value) => { try { localStorage.setItem(`${key}_${getUserKey()}`, value); return; } catch (e) {} try { localStorage.setItem(key, value); } catch (e) {} };
-
-  // store selected image URLs (array) in localStorage under the same key (per-user)
-  const [selected, setSelected] = useState(() => {
     try {
-      const raw = readStorageKey(storageKey);
+      const k = getUserKey();
+      if (!k) return null;
+      const byUser = localStorage.getItem(`${key}_${k}`);
+      if (byUser) return byUser;
+    } catch (e) {}
+    return null;
+  };
+  const writeStorageKey = (key, value) => {
+    try {
+      const k = getUserKey();
+      if (!k) return;
+      localStorage.setItem(`${key}_${k}`, value);
+    } catch (e) {}
+  };
+
+  const [selected, setSelected] = useState({});
+
+  // load per-user selection when user changes; clear when no user
+  useEffect(() => {
+    if (!user) { setSelected({}); return; }
+    try {
+      const raw = readStorageKey(storageKey) || localStorage.getItem(storageKey);
       if (raw) {
         const arr = JSON.parse(raw);
         const obj = {};
         Array.isArray(arr) && arr.forEach(u => { obj[u] = true; });
-        return obj;
+        setSelected(obj);
+        return;
       }
-    } catch (e) {
-      console.warn('Failed to parse selectedItems_bone', e);
-    }
-    return {};
-  });
+    } catch (e) {}
+    setSelected({});
+  }, [user]);
 
+  // persist only for authenticated user
   useEffect(() => {
+    if (!user) return;
     try {
       const arr = Object.keys(selected).filter(k => selected[k]);
       writeStorageKey(storageKey, JSON.stringify(arr));
-    } catch (e) {
-      console.warn('Failed to save selectedItems_bone', e);
-    }
-  }, [selected]);
+    } catch (e) {}
+  }, [selected, user]);
 
   const toggleSelect = (idx) => {
     const url = item_Bone[idx] && item_Bone[idx].img;

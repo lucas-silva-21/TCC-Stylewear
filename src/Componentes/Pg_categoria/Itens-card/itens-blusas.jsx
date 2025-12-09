@@ -11,38 +11,48 @@ export default function Cards({ images = ['/Categoria/Blusa_categ.png'], count }
 
   const storageKey = 'selectedItems_blusas';
   const { user } = useContext(AuthContext);
-  const getUserKey = () => (user ? user.id || user.email || user.name || 'user' : 'guest');
+  const getUserKey = () => (user ? user.id || user.email || user.name || 'user' : null);
   const readStorageKey = (key) => {
     try {
-      const byUser = localStorage.getItem(`${key}_${getUserKey()}`);
+      const k = getUserKey();
+      if (!k) return null;
+      const byUser = localStorage.getItem(`${key}_${k}`);
       if (byUser) return byUser;
-    } catch (e) { }
-    return localStorage.getItem(key);
+    } catch (e) {}
+    return null;
   };
   const writeStorageKey = (key, value) => {
-    try { localStorage.setItem(`${key}_${getUserKey()}`, value); return; } catch (e) { }
-    try { localStorage.setItem(key, value); } catch (e) { }
+    try {
+      const k = getUserKey();
+      if (!k) return;
+      localStorage.setItem(`${key}_${k}`, value);
+    } catch (e) {}
   };
 
-  const [selected, setSelected] = useState(() => {
+  const [selected, setSelected] = useState({});
+
+  useEffect(() => {
+    if (!user) { setSelected({}); return; }
     try {
-      const raw = readStorageKey(storageKey);
+      const raw = readStorageKey(storageKey) || localStorage.getItem(storageKey);
       if (raw) {
         const arr = JSON.parse(raw);
         const obj = {};
         Array.isArray(arr) && arr.forEach(u => { obj[u] = true; });
-        return obj;
+        setSelected(obj);
+        return;
       }
-    } catch (e) { console.warn('Failed to parse selectedItems_blusas', e); }
-    return {};
-  });
+    } catch (e) {}
+    setSelected({});
+  }, [user]);
 
   useEffect(() => {
+    if (!user) return;
     try {
       const arr = Object.keys(selected).filter(k => selected[k]);
       writeStorageKey(storageKey, JSON.stringify(arr));
-    } catch (e) { console.warn('Failed to save selectedItems_blusas', e); }
-  }, [selected]);
+    } catch (e) {}
+  }, [selected, user]);
 
   const toggleSelect = (idx) => {
     const url = items[idx] && items[idx].img;
