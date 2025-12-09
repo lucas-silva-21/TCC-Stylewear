@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import './itens.css'
+import { AuthContext } from '../../Inicio/Header/AuthContext';
 
 
 function Cards({ images = [
@@ -87,9 +88,14 @@ function Cards({ images = [
   }));
 
   const storageKey = 'selectedItems_tenis';
+  const { user } = useContext(AuthContext);
+  const getUserKey = () => (user ? user.id || user.email || user.name || 'user' : 'guest');
+  const readStorageKey = (key) => { try { const byUser = localStorage.getItem(`${key}_${getUserKey()}`); if (byUser) return byUser; } catch (e) {} return localStorage.getItem(key); };
+  const writeStorageKey = (key, value) => { try { localStorage.setItem(`${key}_${getUserKey()}`, value); return; } catch (e) {} try { localStorage.setItem(key, value); } catch (e) {} };
+
   const [selected, setSelected] = useState(() => {
     try {
-      const raw = localStorage.getItem(storageKey);
+      const raw = readStorageKey(storageKey);
       if (raw) {
         const arr = JSON.parse(raw);
         const obj = {};
@@ -103,7 +109,7 @@ function Cards({ images = [
   useEffect(() => {
     try {
       const arr = Object.keys(selected).filter(k => selected[k]);
-      localStorage.setItem(storageKey, JSON.stringify(arr));
+      writeStorageKey(storageKey, JSON.stringify(arr));
     } catch (e) { console.warn('Failed to save', e); }
   }, [selected]);
 
