@@ -75,13 +75,28 @@ export default function Armario() {
           { key: 'selectedItems_tenis', cat: 'tenis', sourceList: basePecas.tenis },
         ];
 
+        // First, ensure all categories exist in saved and preserve existing items
+        Object.keys(basePecas).forEach(cat => {
+          if (!saved[cat]) saved[cat] = [];
+        });
+
+        // Create a copy of saved items to preserve them
+        const preservedItems = {};
+        Object.keys(saved).forEach(cat => {
+          preservedItems[cat] = Array.isArray(saved[cat]) ? [...saved[cat]] : [];
+        });
+
+        // Merge selectedItems_* into saved, preserving existing items from armarioAdded
         mapping.forEach(({ key, cat, sourceList }) => {
           try {
             const rawSel = readStorageKey(key);
             if (!rawSel) return;
             const selArr = JSON.parse(rawSel);
             if (!Array.isArray(selArr) || selArr.length === 0) return;
-            saved[cat] = saved[cat] || [];
+            
+            // Start with preserved items from armarioAdded
+            const existingUrls = new Set(preservedItems[cat] || []);
+            
             selArr.forEach(item => {
               // if item is a string, treat as URL; if numeric, map to sourceList
               let url = null;
@@ -91,18 +106,40 @@ export default function Armario() {
                 const idx = Number(item);
                 if (!Number.isNaN(idx) && Array.isArray(sourceList) && sourceList[idx]) url = sourceList[idx];
               }
-              if (url && !saved[cat].includes(url)) saved[cat].push(url);
+              if (url && !existingUrls.has(url)) {
+                existingUrls.add(url);
+              }
             });
+            
+            // Update saved with merged items
+            saved[cat] = Array.from(existingUrls);
           } catch (e) { /* ignore parsing errors for this key */ }
         });
 
-        // persist merged result back to localStorage (user-specific)
+        // Remove duplicates and persist merged result back to localStorage (user-specific)
+        Object.keys(saved).forEach(cat => {
+          if (Array.isArray(saved[cat])) {
+            saved[cat] = Array.from(new Set(saved[cat]));
+          }
+        });
+        
         try { writeStorageKey('armarioAdded', JSON.stringify(saved)); } catch (e) { /* ignore */ }
 
         // build final pecas: prefer saved arrays (saved) when present, fallback to basePecas
+        // Always ensure placeholder is present and items are unique
         const final = Object.keys(basePecas).reduce((acc, key) => {
-          const source = Array.isArray(saved[key]) && saved[key].length > 0 ? saved[key] : basePecas[key];
-          acc[key] = Array.from(new Set(source));
+          if (Array.isArray(saved[key]) && saved[key].length > 0) {
+            // Use saved items, ensuring placeholder is present
+            const items = Array.from(new Set(saved[key]));
+            const PLACEHOLDER = '/Bloqueio.png';
+            if (!items.includes(PLACEHOLDER)) {
+              items.unshift(PLACEHOLDER);
+            }
+            acc[key] = items;
+          } else {
+            // Fallback to basePecas
+            acc[key] = [...basePecas[key]];
+          }
           return acc;
         }, {});
 
@@ -142,6 +179,26 @@ export default function Armario() {
     };
 
     loadSaved();
+
+    // Listen for storage changes to update armario in real-time
+    const handleStorageChange = (e) => {
+      if (e.key && e.key.startsWith('armarioAdded')) {
+        loadSaved();
+      }
+    };
+
+    window.addEventListener('storage', handleStorageChange);
+    
+    // Also listen for custom event for same-tab updates
+    const handleCustomStorageChange = () => {
+      loadSaved();
+    };
+    window.addEventListener('armarioUpdated', handleCustomStorageChange);
+
+    return () => {
+      window.removeEventListener('storage', handleStorageChange);
+      window.removeEventListener('armarioUpdated', handleCustomStorageChange);
+    };
   }, [user]);
 
   const mudarImg = (categoria, direcao) => {
@@ -191,7 +248,55 @@ export default function Armario() {
           saved[categoria] = saved[categoria].filter(u => u !== url);
         }
         writeStorageKey('armarioAdded', JSON.stringify(saved));
+        // Dispatch custom event to notify other components
+        window.dispatchEvent(new Event('armarioUpdated'));
       } catch (e) { /* ignore storage errors */ }
+
+      // Reset button state by removing from selectedItems_* keys
+      // Map categoria to possible selectedItems keys
+      const selectedItemsKeys = [];
+      switch (categoria) {
+        case 'bone':
+          selectedItemsKeys.push('selectedItems_bone');
+          break;
+        case 'blusas':
+          selectedItemsKeys.push('selectedItems_blusas');
+          break;
+        case 'camiseta':
+          selectedItemsKeys.push('selectedItems_camiseta');
+          break;
+        case 'parteDeBaixo':
+          selectedItemsKeys.push('selectedItems_part_baixo', 'selectedItems_short', 'selectedItems_calca');
+          break;
+        case 'tenis':
+          selectedItemsKeys.push('selectedItems_tenis');
+          break;
+      }
+
+      // Remove URL from all relevant selectedItems keys
+      selectedItemsKeys.forEach(key => {
+        try {
+          const rawSel = readStorageKey(key);
+          if (!rawSel) return;
+          const selArr = JSON.parse(rawSel);
+          if (!Array.isArray(selArr)) return;
+          
+          // Filter out the removed URL (handle both string URLs and numeric indices)
+          const filtered = selArr.filter(item => {
+            if (typeof item === 'string') {
+              return item !== url;
+            }
+            // If it's a number, we'd need to check if it maps to the removed URL
+            // For now, keep numeric indices as they might reference other items
+            return true;
+          });
+          
+          // Only update if something was removed
+          if (filtered.length !== selArr.length) {
+            writeStorageKey(key, JSON.stringify(filtered));
+          }
+        } catch (e) { /* ignore errors for this key */ }
+      });
     } catch (e) { /* ignore */ }
   };
 

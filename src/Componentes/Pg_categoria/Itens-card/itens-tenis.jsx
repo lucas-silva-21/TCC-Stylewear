@@ -132,14 +132,79 @@ function Cards({ images = [
     } catch (e) {}
   }, [selected, user]);
 
+  // Listen for armario updates to reset checkboxes when items are removed
+  useEffect(() => {
+    if (!user) return;
+
+    const handleArmarioUpdate = () => {
+      try {
+        const raw = readStorageKey(storageKey) || localStorage.getItem(storageKey);
+        if (raw) {
+          const arr = JSON.parse(raw);
+          const obj = {};
+          Array.isArray(arr) && arr.forEach(u => { obj[u] = true; });
+          setSelected(obj);
+        } else {
+          setSelected({});
+        }
+      } catch (e) {
+        console.warn('Error updating selected state', e);
+      }
+    };
+
+    window.addEventListener('armarioUpdated', handleArmarioUpdate);
+    
+    // Also listen for storage changes (for cross-tab updates)
+    const handleStorageChange = (e) => {
+      if (e.key && (e.key === storageKey || e.key.startsWith(`${storageKey}_`))) {
+        handleArmarioUpdate();
+      }
+    };
+    window.addEventListener('storage', handleStorageChange);
+
+    return () => {
+      window.removeEventListener('armarioUpdated', handleArmarioUpdate);
+      window.removeEventListener('storage', handleStorageChange);
+    };
+  }, [user]);
+
   const toggleSelect = (idx) => {
     const url = item_Tenis[idx] && item_Tenis[idx].img;
     if (!url) return;
+    const wasSelected = !!selected[url];
     setSelected(prev => {
       const next = { ...prev };
       if (next[url]) delete next[url]; else next[url] = true;
       return next;
     });
+
+    // Sync to armarioAdded
+    if (user) {
+      try {
+        const k = getUserKey();
+        if (!k) return;
+        const armarioKey = `armarioAdded_${k}`;
+        const raw = localStorage.getItem(armarioKey) || localStorage.getItem('armarioAdded');
+        const armario = raw ? JSON.parse(raw) : {};
+        armario.tenis = armario.tenis || [];
+        
+        if (!wasSelected) {
+          // Adding item
+          if (!armario.tenis.includes(url)) {
+            armario.tenis.push(url);
+          }
+        } else {
+          // Removing item
+          armario.tenis = armario.tenis.filter(u => u !== url);
+        }
+        
+        localStorage.setItem(armarioKey, JSON.stringify(armario));
+        // Dispatch custom event to notify Armario component
+        window.dispatchEvent(new Event('armarioUpdated'));
+      } catch (e) {
+        console.warn('sync armarioAdded', e);
+      }
+    }
   }
 
   return (

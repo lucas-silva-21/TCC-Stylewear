@@ -381,6 +381,7 @@
    =========================== */
 
 .armario-item {
+  position: relative; /* Para posicionar o botão remove absolutamente */
   width: 160px;
   height: 160px;
   background: #e7e7e7;
@@ -402,6 +403,10 @@
 /* Remove button style for Armario */
 .armario-remove-button {
     /* Reuse hanger visual: compact icon button */
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    z-index: 10;
     background: rgba(0, 0, 0, 0.16);
     border: none;
     width: 28px;
@@ -411,6 +416,8 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
+    margin: 0;
+    pointer-events: auto;
 }
 
 .hanger-label .hanger-icon-outline {
