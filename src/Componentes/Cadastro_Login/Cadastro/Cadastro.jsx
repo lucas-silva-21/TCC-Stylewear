@@ -57,10 +57,8 @@ function Cadastro() {
       setSenha("");
       setConfirmarSenha("");
 
-      // navega para rota "/" após 1.5s
-      setTimeout(() => {
-        navigate('/');
-      }, 1500);
+      // navega para rota "/" imediatamente após sucesso
+      navigate('/');
     } catch (error) {
       console.error(error);
       setErro(error.message || "Erro ao cadastrar usuário.");

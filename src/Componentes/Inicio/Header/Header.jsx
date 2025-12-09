@@ -39,17 +39,15 @@ function Menu(props) {
 
                 </div>
 
-                { !pathname.startsWith('/Armario') && (
-                    <div className="part2">
-                        <ul className="part2_marcas">
-                            <li><a href="/Umbro"><img src="/Logos/Umbro_logo.png" alt="Umbro" id={props.tt_dest1} /></a></li>
-                            <li><a href="/Nike"><img src="/Logos/nike_logo.png" alt="Nike" id={props.tt_dest2} /></a></li>
-                            <li><a href="/Adidas"><img src="/Logos/Adidas_logo.png" alt="Adidas" id={props.tt_dest3} /></a></li>
-                            <li><a href="/Lacoste"><img src="/Logos/Lacoste_logo.png" alt="Lacoste" id={props.tt_dest4} /></a></li>
-                            <li><a href="/Puma"><img src="/Logos/Puma_logo.png" alt="Puma" id={props.tt_dest5} /></a></li>
-                        </ul>
-                    </div>
-                )}
+                <div className="part2">
+                    <ul className="part2_marcas">
+                        <li><a href="/Umbro"><img src="/Logos/Umbro_logo.png" alt="Umbro" id={props.tt_dest1} /></a></li>
+                        <li><a href="/Nike"><img src="/Logos/nike_logo.png" alt="Nike" id={props.tt_dest2} /></a></li>
+                        <li><a href="/Adidas"><img src="/Logos/Adidas_logo.png" alt="Adidas" id={props.tt_dest3} /></a></li>
+                        <li><a href="/Lacoste"><img src="/Logos/Lacoste_logo.png" alt="Lacoste" id={props.tt_dest4} /></a></li>
+                        <li><a href="/Puma"><img src="/Logos/Puma_logo.png" alt="Puma" id={props.tt_dest5} /></a></li>
+                    </ul>
+                </div>
             </header>
         </>
     )
