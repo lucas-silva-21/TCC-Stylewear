@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import './itens.css';
 
 function Cards({ images = [
@@ -66,17 +66,50 @@ function Cards({ images = [
     alt: `Blusa ${i + 1}º`
   }));
 
+  const storageKey = 'selectedItems_blusas';
+  const [selected, setSelected] = useState(() => {
+    try {
+      const raw = localStorage.getItem(storageKey);
+      if (raw) {
+        const arr = JSON.parse(raw);
+        const obj = {};
+        Array.isArray(arr) && arr.forEach(u => { obj[u] = true; });
+        return obj;
+      }
+    } catch (e) { console.warn('Failed to parse', e); }
+    return {};
+  });
+
+  useEffect(() => {
+    try {
+      const arr = Object.keys(selected).filter(k => selected[k]);
+      localStorage.setItem(storageKey, JSON.stringify(arr));
+    } catch (e) { console.warn('Failed to save', e); }
+  }, [selected]);
+
+  const toggleSelect = (idx) => {
+    const url = item_Blusas[idx] && item_Blusas[idx].img;
+    if (!url) return;
+    setSelected(prev => {
+      const next = { ...prev };
+      if (next[url]) delete next[url]; else next[url] = true;
+      return next;
+    });
+  }
+
   return (
     <>
       {item_Blusas.map((list, index) => (
         <div className='div-card2' key={index}>
           <img src={list.img} alt={list.alt} id='img-item2' />
           <div className="form-check hanger">
-            <input
+              <input
               className="hanger-checkbox"
               type="checkbox"
               id={`hanger-blusa-${index}`}
               aria-label={`Selecionar blusa ${index + 1}`}
+              checked={!!selected[list.img]}
+              onChange={() => toggleSelect(index)}
             />
             <label className="hanger-label" htmlFor={`hanger-blusa-${index}`}>
               <img src="/cabide.png" alt="cabide" className="hanger-icon-outline" />

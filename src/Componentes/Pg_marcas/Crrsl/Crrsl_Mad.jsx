@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import './crrsl.css'
 
 function Carousel(props) {
@@ -53,6 +53,25 @@ function Carousel(props) {
   const itemsBlusa = DATA_UMBRO[tituloBlusa] || [];
   const itemsBone = DATA_UMBRO[tituloBone] || [];
   const itemsAcessorio = DATA_UMBRO[tituloAcessorio] || [];
+
+  const keyFor = (title) => 'selected_' + (title || '').replace(/[^a-z0-9]/gi, '_').toLowerCase();
+  const [selCamiseta, setSelCamiseta] = useState(() => { try { const raw = localStorage.getItem(keyFor(tituloCamiseta)); if (raw) { const arr = JSON.parse(raw); const obj = {}; Array.isArray(arr) && arr.forEach(i => { obj[i] = true; }); return obj; } } catch(e){} return {}; });
+  const [selShort, setSelShort] = useState(() => { try { const raw = localStorage.getItem(keyFor(tituloShort)); if (raw) { const arr = JSON.parse(raw); const obj = {}; Array.isArray(arr) && arr.forEach(i => { obj[i] = true; }); return obj; } } catch(e){} return {}; });
+  const [selCalca, setSelCalca] = useState(() => { try { const raw = localStorage.getItem(keyFor(tituloCalça)); if (raw) { const arr = JSON.parse(raw); const obj = {}; Array.isArray(arr) && arr.forEach(i => { obj[i] = true; }); return obj; } } catch(e){} return {}; });
+  const [selTenis, setSelTenis] = useState(() => { try { const raw = localStorage.getItem(keyFor(tituloTenis)); if (raw) { const arr = JSON.parse(raw); const obj = {}; Array.isArray(arr) && arr.forEach(i => { obj[i] = true; }); return obj; } } catch(e){} return {}; });
+  const [selBlusa, setSelBlusa] = useState(() => { try { const raw = localStorage.getItem(keyFor(tituloBlusa)); if (raw) { const arr = JSON.parse(raw); const obj = {}; Array.isArray(arr) && arr.forEach(i => { obj[i] = true; }); return obj; } } catch(e){} return {}; });
+  const [selBone, setSelBone] = useState(() => { try { const raw = localStorage.getItem(keyFor(tituloBone)); if (raw) { const arr = JSON.parse(raw); const obj = {}; Array.isArray(arr) && arr.forEach(i => { obj[i] = true; }); return obj; } } catch(e){} return {}; });
+  const [selAcessorio, setSelAcessorio] = useState(() => { try { const raw = localStorage.getItem(keyFor(tituloAcessorio)); if (raw) { const arr = JSON.parse(raw); const obj = {}; Array.isArray(arr) && arr.forEach(i => { obj[i] = true; }); return obj; } } catch(e){} return {}; });
+
+  useEffect(() => { try { localStorage.setItem(keyFor(tituloCamiseta), JSON.stringify(Object.keys(selCamiseta).filter(k => selCamiseta[k]).map(k => Number(k)))); } catch(e){} }, [selCamiseta, tituloCamiseta]);
+  useEffect(() => { try { localStorage.setItem(keyFor(tituloShort), JSON.stringify(Object.keys(selShort).filter(k => selShort[k]).map(k => Number(k)))); } catch(e){} }, [selShort, tituloShort]);
+  useEffect(() => { try { localStorage.setItem(keyFor(tituloCalça), JSON.stringify(Object.keys(selCalca).filter(k => selCalca[k]).map(k => Number(k)))); } catch(e){} }, [selCalca, tituloCalça]);
+  useEffect(() => { try { localStorage.setItem(keyFor(tituloTenis), JSON.stringify(Object.keys(selTenis).filter(k => selTenis[k]).map(k => Number(k)))); } catch(e){} }, [selTenis, tituloTenis]);
+  useEffect(() => { try { localStorage.setItem(keyFor(tituloBlusa), JSON.stringify(Object.keys(selBlusa).filter(k => selBlusa[k]).map(k => Number(k)))); } catch(e){} }, [selBlusa, tituloBlusa]);
+  useEffect(() => { try { localStorage.setItem(keyFor(tituloBone), JSON.stringify(Object.keys(selBone).filter(k => selBone[k]).map(k => Number(k)))); } catch(e){} }, [selBone, tituloBone]);
+  useEffect(() => { try { localStorage.setItem(keyFor(tituloAcessorio), JSON.stringify(Object.keys(selAcessorio).filter(k => selAcessorio[k]).map(k => Number(k)))); } catch(e){} }, [selAcessorio, tituloAcessorio]);
+
+  const toggle = (setter, idx) => setter(prev => { const next = { ...prev }; if (next[idx]) delete next[idx]; else next[idx] = true; return next; });
 
   return (
     <>

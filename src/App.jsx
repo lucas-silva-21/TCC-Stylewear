@@ -51,11 +51,9 @@ function App() {
             <>
               <Header />
               <Capa />
-              
               <Destaques />
               <Categoria />
               <Container1 />
-              <Carrosel />
               <Marcas_secund />
               <Footer />
             </>
@@ -216,6 +214,7 @@ function App() {
           element={
             <>
               <Header />
+              <Carrosel />
               <Camisetas titulo="Camiseta" />
               <Marcas_secund/>
               <Footer />
@@ -226,6 +225,7 @@ function App() {
           element={
             <>
               <Header />
+              <Carrosel />
               <Blusas titulo="Blusas"/>
               <Marcas_secund/>
               <Footer />
@@ -236,6 +236,7 @@ function App() {
           element={
             <>
               <Header />
+              <Carrosel />
               <Calças titulo="Parte de baixo"/>
               <Marcas_secund/>
               <Footer />
@@ -247,6 +248,7 @@ function App() {
           element={
             <>
               <Header />
+              <Carrosel />
               <Calças titulo="Calças"/>
               <Marcas_secund/>
               <Footer />
@@ -257,6 +259,7 @@ function App() {
           element={
             <>
               <Header />
+              <Carrosel />
               <Shorts titulo="Shorts"/>
               <Marcas_secund/>
               <Footer />
@@ -268,6 +271,7 @@ function App() {
           element={
             <>
               <Header />
+              <Carrosel />
               <Acessorio titulo="Acessórios"/>
               <Marcas_secund/>
               <Footer />
@@ -278,6 +282,7 @@ function App() {
           element={
             <>
               <Header />
+              <Carrosel />
               <Tenis titulo="Tênis"/>
               <Marcas_secund/>
               <Footer />
@@ -288,6 +293,7 @@ function App() {
           element={
             <>
               <Header />
+              <Carrosel />
               <Bones titulo="Bonés"/>
               <Marcas_secund/>
               <Footer />

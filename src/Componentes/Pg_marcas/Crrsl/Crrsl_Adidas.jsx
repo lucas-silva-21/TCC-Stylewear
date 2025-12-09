@@ -1,5 +1,6 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect, useContext } from 'react';
 import './crrsl.css'
+import { AuthContext } from '../../Inicio/Header/AuthContext';
 
 function Carousel(props) {
   const { tituloTenis, tituloShort, tituloCamiseta, tituloCalça, tituloBlusa, tituloBone , tituloAcessorio} = props;
@@ -117,6 +118,75 @@ function Carousel(props) {
   const itemsCamiseta = DATA_UMBRO[tituloCamiseta] || [];
   const itemsCalça = DATA_UMBRO[tituloCalça] || [];
 
+  const storageKey = 'selected_Crrsl_Adidas';
+  const [selected, setSelected] = useState(() => {
+    try {
+      const raw = localStorage.getItem(storageKey);
+      if (raw) return JSON.parse(raw);
+    } catch (e) { console.warn('load selected_Crrsl_Adidas', e); }
+    return { camiseta: {}, short: {}, calca: {}, tenis: {} };
+  });
+
+  useEffect(() => {
+    try { localStorage.setItem(storageKey, JSON.stringify(selected)); }
+    catch (e) { console.warn('save selected_Crrsl_Adidas', e); }
+  }, [selected]);
+
+  // get current user from AuthContext to write per-user armario
+  const { user } = useContext(AuthContext);
+  const getUserKey = () => (user ? (user.id || user.email || user.name || 'user') : 'guest');
+
+  // helper to map carousel group names to Armario categories
+  const mapGroupToArmario = (group) => {
+    switch (group) {
+      case 'camiseta': return 'camiseta';
+      case 'short':
+      case 'calca': return 'parteDeBaixo';
+      case 'tenis': return 'tenis';
+      default: return 'camiseta';
+    }
+  };
+
+  // items map so we can resolve an image url by group+index
+  const itemsMap = {
+    camiseta: itemsCamiseta,
+    short: itemsShort,
+    calca: itemsCalça,
+    tenis: itemsTenis,
+  };
+
+  const toggleSelect = (group, idx) => {
+    setSelected(prev => {
+      const next = { ...(prev || {}) };
+      next[group] = { ...(next[group] || {}) };
+      const wasSelected = !!(prev && prev[group] && prev[group][idx]);
+      if (wasSelected) delete next[group][idx]; else next[group][idx] = true;
+
+      // sync to per-user armarioAdded in localStorage
+      try {
+        const kUser = getUserKey();
+        const armarioKey = `armarioAdded_${kUser}`;
+        const raw = localStorage.getItem(armarioKey) || localStorage.getItem('armarioAdded');
+        const armario = raw ? JSON.parse(raw) : {};
+        const cat = mapGroupToArmario(group);
+        armario[cat] = armario[cat] || [];
+        const imgUrl = itemsMap[group] && itemsMap[group][idx] && itemsMap[group][idx].img;
+        if (imgUrl) {
+          if (!wasSelected) {
+            if (!armario[cat].includes(imgUrl)) armario[cat].push(imgUrl);
+          } else {
+            armario[cat] = armario[cat].filter(u => u !== imgUrl);
+          }
+        }
+        localStorage.setItem(armarioKey, JSON.stringify(armario));
+      } catch (e) {
+        console.warn('sync armarioAdded', e);
+      }
+
+      return next;
+    });
+  };
+
   return (
     <>
       <div className='caroseul-seleção'>
@@ -133,6 +203,8 @@ function Carousel(props) {
                     type="checkbox"
                     id={`hanger-camiseta-${index}`}
                     aria-label={`Selecionar camiseta ${index + 1}`}
+                    checked={!!selected?.camiseta?.[index]}
+                    onChange={() => toggleSelect('camiseta', index)}
                   />
                   <label className="hanger-label" htmlFor={`hanger-camiseta-${index}`}>
                     <img src="/cabide.png" alt="cabide" className="hanger-icon-outline" />
@@ -161,6 +233,8 @@ function Carousel(props) {
                     type="checkbox"
                     id={`hanger-short-${index}`}
                     aria-label={`Selecionar short ${index + 1}`}
+                    checked={!!selected?.short?.[index]}
+                    onChange={() => toggleSelect('short', index)}
                   />
                   <label className="hanger-label" htmlFor={`hanger-short-${index}`}>
                     <img src="/cabide.png" alt="cabide" className="hanger-icon-outline" />
@@ -189,6 +263,8 @@ function Carousel(props) {
                     type="checkbox"
                     id={`hanger-calça-${index}`}
                     aria-label={`Selecionar calça ${index + 1}`}
+                    checked={!!selected?.calca?.[index]}
+                    onChange={() => toggleSelect('calca', index)}
                   />
                   <label className="hanger-label" htmlFor={`hanger-calça-${index}`}>
                     <img src="/cabide.png" alt="cabide" className="hanger-icon-outline" />
@@ -217,6 +293,8 @@ function Carousel(props) {
                     type="checkbox"
                     id={`hanger-tenis-${index}`}
                     aria-label={`Selecionar tenis ${index + 1}`}
+                    checked={!!selected?.tenis?.[index]}
+                    onChange={() => toggleSelect('tenis', index)}
                   />
                   <label className="hanger-label" htmlFor={`hanger-tenis-${index}`}>
                     <img src="/cabide.png" alt="cabide" className="hanger-icon-outline" />

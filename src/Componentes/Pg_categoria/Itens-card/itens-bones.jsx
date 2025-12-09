@@ -1,3 +1,4 @@
+import React, { useState, useEffect } from 'react';
 import './itens.css'
 
 function Cards({ images = [
@@ -64,17 +65,57 @@ function Cards({ images = [
     alt: `Item ${i + 1}`
   }));
 
+  // Persist selected items (indices) for this cards list in localStorage
+  const storageKey = 'selectedItems_bone';
+  // store selected image URLs (array) in localStorage under the same key
+  const [selected, setSelected] = useState(() => {
+    try {
+      const raw = localStorage.getItem(storageKey);
+      if (raw) {
+        const arr = JSON.parse(raw);
+        const obj = {};
+        Array.isArray(arr) && arr.forEach(u => { obj[u] = true; });
+        return obj;
+      }
+    } catch (e) {
+      console.warn('Failed to parse selectedItems_bone', e);
+    }
+    return {};
+  });
+
+  useEffect(() => {
+    try {
+      const arr = Object.keys(selected).filter(k => selected[k]);
+      localStorage.setItem(storageKey, JSON.stringify(arr));
+    } catch (e) {
+      console.warn('Failed to save selectedItems_bone', e);
+    }
+  }, [selected]);
+
+  const toggleSelect = (idx) => {
+    const url = item_Bone[idx] && item_Bone[idx].img;
+    if (!url) return;
+    setSelected(prev => {
+      const next = { ...prev };
+      if (next[url]) delete next[url];
+      else next[url] = true;
+      return next;
+    });
+  };
+
   return (
     <>
       {item_Bone.map((list, index) => (
         <div className='div-card2' key={index}>
           <img src={list.img} alt={list.alt} id='img-item2' />
           <div className="form-check hanger">
-            <input
+              <input
               className="hanger-checkbox"
               type="checkbox"
               id={`hanger-bone-${index}`}
               aria-label={`Selecionar bone ${index + 1}`}
+                checked={!!selected[list.img]}
+                onChange={() => toggleSelect(index)}
             />
             <label className="hanger-label" htmlFor={`hanger-bone-${index}`}>
               <img src="/cabide.png" alt="cabide" className="hanger-icon-outline" />
